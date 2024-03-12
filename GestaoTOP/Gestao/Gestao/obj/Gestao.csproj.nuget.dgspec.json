@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Downloads\\Ideia-TCC-main (7)\\Ideia-TCC-main\\GestaoTOP\\Gestao\\Gestao\\Gestao.csproj": {}
+    "C:\\Users\\User\\Desktop\\Trabalho do Rosa\\GestaoTOP\\Gestao\\Gestao\\Gestao.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Downloads\\Ideia-TCC-main (7)\\Ideia-TCC-main\\GestaoTOP\\Gestao\\Gestao\\Gestao.csproj": {
+    "C:\\Users\\User\\Desktop\\Trabalho do Rosa\\GestaoTOP\\Gestao\\Gestao\\Gestao.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Downloads\\Ideia-TCC-main (7)\\Ideia-TCC-main\\GestaoTOP\\Gestao\\Gestao\\Gestao.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\Trabalho do Rosa\\GestaoTOP\\Gestao\\Gestao\\Gestao.csproj",
         "projectName": "Gestao",
-        "projectPath": "C:\\Users\\User\\Downloads\\Ideia-TCC-main (7)\\Ideia-TCC-main\\GestaoTOP\\Gestao\\Gestao\\Gestao.csproj",
+        "projectPath": "C:\\Users\\User\\Desktop\\Trabalho do Rosa\\GestaoTOP\\Gestao\\Gestao\\Gestao.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Downloads\\Ideia-TCC-main (7)\\Ideia-TCC-main\\GestaoTOP\\Gestao\\Gestao\\obj\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\Trabalho do Rosa\\GestaoTOP\\Gestao\\Gestao\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

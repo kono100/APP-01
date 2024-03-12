@@ -1,10 +1,12 @@
 ﻿using System.Diagnostics;
 using Gestao.Models;
 using Gestao.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Gestao.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

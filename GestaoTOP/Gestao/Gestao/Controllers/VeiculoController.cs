@@ -1,6 +1,7 @@
 ﻿using System.Linq.Expressions;
 using Gestao.Data;
 using Gestao.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -8,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Gestao.Controllers
 {
+    [Authorize]
     public class VeiculoController : Controller
     {
         private readonly IESContext _context;

@@ -1,10 +1,12 @@
 ﻿using Gestao.Data;
 using Gestao.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace Gestao.Controllers
 {
+    [Authorize]
     public class MoradorController : Controller
     {
         private readonly IESContext _context;
