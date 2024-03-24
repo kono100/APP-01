@@ -120,7 +120,7 @@ namespace Gestao.Data
                             Marca = "Ford",
                             Modelo = "Fiesta",
                             Cor = "Branco",
-                            Tag = "Sim",
+                            Tag = "SIM",
                             DiasPermitido = "Segunda",
                             fk_MoradorID = 1
                         },
@@ -131,7 +131,18 @@ namespace Gestao.Data
                             Marca = "Volksvagem",
                             Modelo = "Gol",
                             Cor = "Preto",
-                            Tag = "Sim",
+                            Tag = "SIM",
+                            DiasPermitido = "Segunda",
+                            fk_MoradorID = 2
+                        },
+
+                        new Veiculo()
+                        {
+                            Placa = "BRA2E19",
+                            Marca = "Volksvagem",
+                            Modelo = "Gol",
+                            Cor = "Preto",
+                            Tag = "SIM",
                             DiasPermitido = "Segunda",
                             fk_MoradorID = 2
                         },
@@ -143,7 +154,7 @@ namespace Gestao.Data
                             Marca = "Chevrolet",
                             Modelo = "Cruze",
                             Cor = "Vermelho",
-                            Tag = "Sim",
+                            Tag = "SIM",
                             DiasPermitido = "Segunda",
                             fk_MoradorID = 3
                         },

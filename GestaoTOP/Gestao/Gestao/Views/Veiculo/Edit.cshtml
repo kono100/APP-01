@@ -42,15 +42,42 @@
 
 
             <div class="form-group">
-                    <label asp-for="Tag" class="control-label"></label>
-                    <input asp-for="Tag" class="form-control" />
-                    <span asp-validation-for="Tag" class="text-danger"></span>
+                <label asp-for="Tag" class="control-label"></label>
+                <input asp-for="Tag" class="form-control" />
+                <span asp-validation-for="Tag" class="text-danger"></span>
 
+@* 
+            <div class="form-group">
+                <label asp-for="DiasPermitido" class="control-label"></label>
+                <input asp-for="DiasPermitido" class="form-control" />
+                <span asp-validation-for="DiasPermitido" class="text-danger"></span>
+
+ *@
 
             <div class="form-group">
-                        <label asp-for="DiasPermitido" class="control-label"></label>
-                        <input asp-for="DiasPermitido" class="form-control" />
-                        <span asp-validation-for="DiasPermitido" class="text-danger"></span>
+                            <label class="control-label">DiasPermitido</label>
+                <div>
+                                <label><input type="checkbox" name="DiasPermitido" value="Seg">Segunda-feira</label><br>
+                                <label><input type="checkbox" name="DiasPermitido" value="Terça-feira"> Terça-feira</label><br>
+                                <label><input type="checkbox" name="DiasPermitido" value="Quarta-feira"> Quarta-feira</label><br>
+                                <label><input type="checkbox" name="DiasPermitido" value="Quinta-feira"> Quinta-feira</label><br>
+                                <label><input type="checkbox" name="DiasPermitido" value="Sexta-feira"> Sexta-feira</label><br>
+                                <label><input type="checkbox" name="DiasPermitido" value="Sábado"> Sábado</label><br>
+                                <label><input type="checkbox" name="DiasPermitido" value="Dom">Domingo</label><br>
+                                <label><input type="checkbox" name="DiasPermitido" value="Todos_Dias" id="Todos_Dias">Todos os dias</label>
+                </div>
+                <span class="text-danger"></span>
+            </div>
+
+            <script>
+                document.getElementById('Todos_Dias').addEventListener('click', function () {
+                    var checkboxes = document.querySelectorAll('input[type="checkbox"][name="marca"]');
+                    var isChecked = this.checked;
+                    checkboxes.forEach(function (checkbox) {
+                        checkbox.checked = isChecked;
+                    });
+                });
+            </script>
 
 
 
