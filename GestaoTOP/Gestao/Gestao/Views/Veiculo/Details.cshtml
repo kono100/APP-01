@@ -41,6 +41,21 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Cor)
         </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Tag)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Tag)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DiasPermitido)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DiasPermitido)
+        </dd>
+
     </dl>
 
     <label asp-for="Morador.Nome" class="control-label">Morador associado</label>

@@ -19,6 +19,10 @@ namespace Gestao.Models
 
         public string Cor { get; set; }
 
+        public string Tag { get; set; }
+
+        public string DiasPermitido { get; set; }
+
 
 
 

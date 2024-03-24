@@ -104,6 +104,10 @@ namespace Gestao.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("DiasPermitido")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Marca")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -113,6 +117,10 @@ namespace Gestao.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Placa")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Tag")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

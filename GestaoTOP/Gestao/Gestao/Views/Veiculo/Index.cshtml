@@ -43,6 +43,15 @@
 
 
             <th>
+                @Html.DisplayNameFor(model => model.Tag)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.DiasPermitido)
+            </th>
+
+
+            <th>
                 @Html.DisplayNameFor(model => model.Morador.Nome) do Morador Associado
             </th>
 
@@ -72,6 +81,14 @@
 
                 <td>
                     @Html.DisplayFor(modelItem => item.Cor)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tag)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.DiasPermitido)
                 </td>
 
                 <td>
