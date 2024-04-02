@@ -104,9 +104,8 @@ namespace Gestao.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("DiasPermitido")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("Domingo")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Marca")
                         .IsRequired()
@@ -120,9 +119,30 @@ namespace Gestao.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("Quarta")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("Quinta")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("Sabado")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("Segunda")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("Sexta")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Tag")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Terca")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("Todos_os_Dias")
+                        .HasColumnType("bit");
 
                     b.Property<long?>("VisitanteID")
                         .HasColumnType("bigint");

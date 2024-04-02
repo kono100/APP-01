@@ -37,9 +37,7 @@ namespace Gestao.Models
 
         public bool Domingo { get; set; }
 
-
-
-        public string DiasPermitido { get; set; }
+        public bool Todos_os_Dias { get; set; }
 
 
 

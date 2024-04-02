@@ -47,7 +47,7 @@
             </th>
 
             <th>
-                @* @Html.DisplayNameFor(model => model.DiasPermitido) *@Dias Permitidos
+                @Html.DisplayNameFor(model => model)Dias Permitidos
             </th>
 
 
@@ -88,7 +88,54 @@
                 </td>
 
                 <td>
-                    @Html.DisplayFor(modelItem => item.DiasPermitido)
+                    @if(item.Segunda == true)
+                    {
+                        <text>Seg, </text>  
+                    }
+
+                    @if (item.Terca == true)
+                    {
+                        <text>Ter, </text>
+                    }
+
+                    @if (item.Quarta == true)
+                    {
+                        <text>Qua, </text>
+                    }
+
+                    @if (item.Quinta == true)
+                    {
+                        <text>Qui, </text>
+                    }
+
+                    @if (item.Sexta == true)
+                    {
+                        <text>Sex, </text>
+                    }
+
+                    @if (item.Sabado == true)
+                    {
+                        <text>Sab, </text>
+                    }
+
+                    @if (item.Domingo == true)
+                    {
+                        <text>Dom, </text>
+                    }
+
+                    @if (item.Todos_os_Dias == true)
+                    {
+                        <text>Todos, </text>
+                    }
+
+@*                     @Html.DisplayFor(modelItem => item.Segunda)
+                    @Html.DisplayFor(modelItem => item.Terca)
+                    @Html.DisplayFor(modelItem => item.Quarta)
+                    @Html.DisplayFor(modelItem => item.Quinta)
+                    @Html.DisplayFor(modelItem => item.Sexta)
+                    @Html.DisplayFor(modelItem => item.Sabado)
+                    @Html.DisplayFor(modelItem => item.Domingo)
+                    @Html.DisplayFor(modelItem => item.Todos_os_Dias) *@
                 </td>
 
                 <td>

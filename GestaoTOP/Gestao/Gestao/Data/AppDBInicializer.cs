@@ -1,4 +1,5 @@
 ﻿using Gestao.Models;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Gestao.Data
 {
@@ -28,6 +29,7 @@ namespace Gestao.Data
                             DataNasc = "22/12/1977",
                             CPF = "111.111.111-55",
                             Telefone = "16985630129"
+
 
                         },
 
@@ -121,7 +123,13 @@ namespace Gestao.Data
                             Modelo = "Fiesta",
                             Cor = "Branco",
                             Tag = "SIM",
-                            DiasPermitido = "Segunda",
+                            Segunda = true,
+                            Terca = true,
+                            Quarta = true,
+                            Quinta = true,
+                            Sexta = true,
+                            Sabado = true,
+                            Domingo = true,
                             fk_MoradorID = 1
                         },
 
@@ -132,7 +140,13 @@ namespace Gestao.Data
                             Modelo = "Gol",
                             Cor = "Preto",
                             Tag = "SIM",
-                            DiasPermitido = "Segunda",
+                            Segunda = true,
+                            Terca = true,
+                            Quarta = true,
+                            Quinta = true,
+                            Sexta = true,
+                            Sabado = true,
+                            Domingo = true,
                             fk_MoradorID = 2
                         },
 
@@ -143,7 +157,13 @@ namespace Gestao.Data
                             Modelo = "Gol",
                             Cor = "Preto",
                             Tag = "SIM",
-                            DiasPermitido = "Segunda",
+                            Segunda = true,
+                            Terca = true,
+                            Quarta = true,
+                            Quinta = true,
+                            Sexta = true,
+                            Sabado = true,
+                            Domingo = true,
                             fk_MoradorID = 2
                         },
 
@@ -155,7 +175,13 @@ namespace Gestao.Data
                             Modelo = "Cruze",
                             Cor = "Vermelho",
                             Tag = "SIM",
-                            DiasPermitido = "Segunda",
+                            Segunda = true,
+                            Terca = true,
+                            Quarta = true,
+                            Quinta = true,
+                            Sexta = true,
+                            Sabado = true,
+                            Domingo = true,
                             fk_MoradorID = 3
                         },
                     });
