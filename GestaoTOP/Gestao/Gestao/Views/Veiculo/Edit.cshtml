@@ -46,6 +46,87 @@
                 <input asp-for="Tag" class="form-control" />
                 <span asp-validation-for="Tag" class="text-danger"></span>
 
+
+
+
+            <br />
+
+            <label>Dias Permitidos</label>
+
+            <br />
+
+
+
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Segunda" /> @Html.DisplayNameFor(model => model.Segunda)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Terca" /> @Html.DisplayNameFor(model => model.Terca)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Quarta" /> @Html.DisplayNameFor(model => model.Quarta)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Quinta" /> @Html.DisplayNameFor(model => model.Quinta)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Sexta" /> @Html.DisplayNameFor(model => model.Sexta)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Sabado" /> @Html.DisplayNameFor(model => model.Sabado)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Domingo" /> @Html.DisplayNameFor(model => model.Domingo)
+                </label>
+            </div>
+
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Todos_os_Dias" /> @Html.DisplayNameFor(model => model.Todos_os_Dias)
+                </label>
+            </div>
+
+
+            <script>
+                document.getElementById('Todos_os_Dias').addEventListener('click', function () {
+                    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+                    var isChecked = this.checked;
+                    checkboxes.forEach(function (checkbox) {
+                        checkbox.checked = isChecked;
+                    });
+                });
+            </script>
+
+
+
+
+
+            <script>
+                var todosOsDias = document.getElementById('Todos_os_Dias');
+                var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+                checkboxes.forEach(function (checkbox) {
+                    checkbox.addEventListener('click', function () {
+                        if (todosOsDias.checked && this !== todosOsDias) {
+                            todosOsDias.checked = false;
+                        }
+                    });
+                });
+            </script>
+
 @* 
             <div class="form-group">
                 <label asp-for="DiasPermitido" class="control-label"></label>
@@ -53,7 +134,7 @@
                 <span asp-validation-for="DiasPermitido" class="text-danger"></span>
 
  *@
-
+@* 
             <div class="form-group">
                             <label class="control-label">DiasPermitido</label>
                 <div>
@@ -79,7 +160,7 @@
                         });
                     </script>
 
-
+ *@
 
 
             </div>

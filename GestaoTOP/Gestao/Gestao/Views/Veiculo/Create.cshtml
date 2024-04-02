@@ -334,6 +334,23 @@
             </script>
 
 
+
+
+
+            <script>
+                var todosOsDias = document.getElementById('Todos_os_Dias');
+                var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+                checkboxes.forEach(function (checkbox) {
+                    checkbox.addEventListener('click', function () {
+                        if (todosOsDias.checked && this !== todosOsDias) {
+                            todosOsDias.checked = false;
+                        }
+                    });
+                });
+            </script>
+
+
 @*             <div class="form-group form-check">
                 <label class="form-check-label">
                     <input class="form-check-input" asp-for="TodosDias" /> @Html.DisplayNameFor(model => model.TodosDias)
