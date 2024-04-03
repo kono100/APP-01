@@ -123,13 +123,14 @@ namespace Gestao.Data
                             Modelo = "Fiesta",
                             Cor = "Branco",
                             Tag = "SIM",
-                            Segunda = true,
-                            Terca = true,
-                            Quarta = true,
-                            Quinta = true,
-                            Sexta = true,
+                            Segunda = false,
+                            Terca = false,
+                            Quarta = false,
+                            Quinta = false,
+                            Sexta = false,
                             Sabado = true,
                             Domingo = true,
+                            Todos_os_Dias = false,
                             fk_MoradorID = 1
                         },
 
@@ -145,8 +146,9 @@ namespace Gestao.Data
                             Quarta = true,
                             Quinta = true,
                             Sexta = true,
-                            Sabado = true,
-                            Domingo = true,
+                            Sabado = false,
+                            Domingo = false,
+                            Todos_os_Dias = false,
                             fk_MoradorID = 2
                         },
 
@@ -158,12 +160,13 @@ namespace Gestao.Data
                             Cor = "Preto",
                             Tag = "SIM",
                             Segunda = true,
-                            Terca = true,
+                            Terca = false,
                             Quarta = true,
                             Quinta = true,
-                            Sexta = true,
+                            Sexta = false,
                             Sabado = true,
                             Domingo = true,
+                            Todos_os_Dias = false,
                             fk_MoradorID = 2
                         },
 
@@ -182,6 +185,7 @@ namespace Gestao.Data
                             Sexta = true,
                             Sabado = true,
                             Domingo = true,
+                            Todos_os_Dias = true,
                             fk_MoradorID = 3
                         },
                     });

@@ -135,44 +135,57 @@
                     {
                         <text>Todos Dias Permitido</text>
                     }
+
                     else
                     {
-                        @if (item.Segunda == true)
+
+                        @if (item.Sabado == true && item.Domingo == true && item.Segunda == false && item.Terca == false && item.Quarta == false && item.Quinta == false && item.Sexta == false)
                         {
-                            <text>Seg, </text>
+                            <text>Apenas Final de semana </text>
+                        }
+                        else
+                        {
+
+                            @if (item.Segunda == true)
+                            {
+                                <text>Seg, </text>
+                            }
+
+                            @if (item.Terca == true)
+                            {
+                                <text>Ter, </text>
+                            }
+
+                            @if (item.Quarta == true)
+                            {
+                                <text>Qua, </text>
+                            }
+
+                            @if (item.Quinta == true)
+                            {
+                                <text>Qui, </text>
+                            }
+
+                            @if (item.Sexta == true)
+                            {
+                                <text>Sex, </text>
+                            }
+
+                            @if (item.Sabado == true)
+                            {
+                                <text>Sab, </text>
+                            }
+
+                            @if (item.Domingo == true)
+                            {
+                                <text>Dom</text>
+                            }
                         }
 
-                        @if (item.Terca == true)
-                        {
-                            <text>Ter, </text>
-                        }
-
-                        @if (item.Quarta == true)
-                        {
-                            <text>Qua, </text>
-                        }
-
-                        @if (item.Quinta == true)
-                        {
-                            <text>Qui, </text>
-                        }
-
-                        @if (item.Sexta == true)
-                        {
-                            <text>Sex, </text>
-                        }
-
-                        @if (item.Sabado == true)
-                        {
-                            <text>Sab, </text>
-                        }
-
-                        @if (item.Domingo == true)
-                        {
-                            <text>Dom, </text>
-                        }
-                    }
+                }
                 </td>
+
+
 
 
                 <td>
