@@ -12,8 +12,18 @@ builder.Services.AddDbContext<Gestao.Data.IESContext>(options =>
         .GetConnectionString("Gestao")); /*MESMO NOME QUE NO APPSETTINGS*/
 });
 
+//builder.Services.AddDefaultIdentity<IdentityUser>()
+//    .AddDefaultTokenProviders()
+//    .AddRoles<IdentityRole>()
+//    .AddEntityFrameworkStores<IESContext>();
+
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+     .AddDefaultTokenProviders()
+    .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<IESContext>();
+
+//builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+//    .AddEntityFrameworkStores<IESContext>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

@@ -24,5 +24,9 @@ namespace Gestao.Data
         public DbSet<Reservas> Reservas { get; set; }
 
 
-    }
+        // Roles
+		public DbSet<ApplicationUser> users { get; set; }
+
+
+	}
 }
