@@ -47,8 +47,23 @@
             </th>
 
             <th>
+                @Html.DisplayNameFor(model => model.HrEntradaSeg)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.HrSaidaSeg)
+            </th>
+
+@*             <th>
+                @Html.DisplayNameFor(model => model.HrSegunda)
+            </th> *@
+
+
+            <th>
                 @Html.DisplayNameFor(model => model)Dias Permitidos
             </th>
+
+
 
 
             <th>
@@ -86,6 +101,15 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Tag)
                 </td>
+
+                <td>
+                    @item.HrEntradaSeg.ToString("HH:mm")
+                </td>
+
+                <td>
+                    @item.HrSaidaSeg.ToString("HH:mm")
+                </td>
+
 
 @*                 <td>
                     @if(item.Segunda == true)
