@@ -306,7 +306,7 @@
 
 
 
-
+@* 
 
 
 
@@ -360,15 +360,151 @@
                     }
                 }
             </script>
+ *@
+
+
+@* 
+
+
+
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" id="checkTerca" asp-for="Terca" onchange="toggleScriptVisibility()" /> @Html.DisplayNameFor(model => model.Terca)
+                </label>
+            </div>
+
+            <button id="toggleButton" onclick="toggleVisibility()" style="display:none;">Exibir</button>
+
+            <div id="codigoPreenchido" style="display:none;">
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" id="HrEntTer" asp-for="HrEntTer" type="time" step="300" style="background-color: #f0f0f0; color: #333; border: 1px solid #ccc; border-radius: 5px; padding: 8px; width: 150px;" onchange="checkInputs()" /> @Html.DisplayNameFor(model => model.HrEntTer)
+                    </label>
+                </div>
+
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" id="HrSaiTer" asp-for="HrSaiTer" type="time" step="300" style="background-color: #f0f0f0; color: #333; border: 1px solid #ccc; border-radius: 5px; padding: 8px; width: 150px;" onchange="checkInputs()" /> @Html.DisplayNameFor(model => model.HrSaiTer)
+                    </label>
+                </div>
+            </div>
+
+            <script>
+                function toggleVisibility() {
+                    var element = document.getElementById('codigoPreenchido');
+                    var button = document.getElementById('toggleButton');
+
+                    if (element.style.display === 'none') {
+                        element.style.display = 'block';
+                        button.innerText = 'Ocultar';
+                    } else {
+                        element.style.display = 'none';
+                        button.innerText = 'Exibir';
+                    }
+                }
+
+                function checkInputs() {
+                    var hrEntTer = document.getElementById('HrEntTer').value;
+                    var hrSaiTer = document.getElementById('HrSaiTer').value;
+
+                    if (hrEntTer && hrSaiTer) {
+                        setTimeout(function () {
+                            alert('ALERTA! Permitido das ' + hrEntTer + ' às ' + hrSaiTer + ' Horas.');
+                        }, 1000); // 1 segundos de atraso
+                    }
+                }
+
+                function toggleScriptVisibility() {
+                    var checkbox = document.getElementById('checkTerca');
+                    var button = document.getElementById('toggleButton');
+
+                    if (checkbox.checked) {
+                        button.style.display = 'block';
+                    } else {
+                        button.style.display = 'none';
+                        document.getElementById('codigoPreenchido').style.display = 'none';
+                        button.innerText = 'Exibir';
+                    }
+                }
+            </script>
+
+
+ *@
 
 
 
 
 
 
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" id="checkTerca" asp-for="Terca" onchange="toggleScriptVisibility()" /> @Html.DisplayNameFor(model => model.Terca)
+                </label>
+            </div>
 
+            <button id="toggleButton" onclick="toggleVisibility()" style="display:none;">Exibir</button>
+            <button id="clearButton" onclick="clearFields()" style="display:none;">Limpar Campos</button>
 
+            <div id="codigoPreenchido" style="display:none;">
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" id="HrEntTer" asp-for="HrEntTer" type="time" step="300" style="background-color: #f0f0f0; color: #333; border: 1px solid #ccc; border-radius: 5px; padding: 8px; width: 150px;" onchange="checkInputs()" /> @Html.DisplayNameFor(model => model.HrEntTer)
+                    </label>
+                </div>
 
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" id="HrSaiTer" asp-for="HrSaiTer" type="time" step="300" style="background-color: #f0f0f0; color: #333; border: 1px solid #ccc; border-radius: 5px; padding: 8px; width: 150px;" onchange="checkInputs()" /> @Html.DisplayNameFor(model => model.HrSaiTer)
+                    </label>
+                </div>
+            </div>
+
+            <script>
+                function toggleVisibility() {
+                    var element = document.getElementById('codigoPreenchido');
+                    var button = document.getElementById('toggleButton');
+
+                    if (element.style.display === 'none') {
+                        element.style.display = 'block';
+                        button.innerText = 'Ocultar';
+                        document.getElementById('clearButton').style.display = 'block'; // Mostra o botão Limpar Campos
+                    } else {
+                        element.style.display = 'none';
+                        button.innerText = 'Exibir';
+                        document.getElementById('clearButton').style.display = 'none'; // Oculta o botão Limpar Campos
+                    }
+                }
+
+                function checkInputs() {
+                    var hrEntTer = document.getElementById('HrEntTer').value;
+                    var hrSaiTer = document.getElementById('HrSaiTer').value;
+
+                    if (hrEntTer && hrSaiTer) {
+                        setTimeout(function () {
+                            alert('ALERTA! De Terça-feira entrada Permitida das ' + hrEntTer + ' às ' + hrSaiTer + ' Horas.');
+                        }, 1000); // 1 segundos de atraso
+                    }
+                }
+
+                function toggleScriptVisibility() {
+                    var checkbox = document.getElementById('checkTerca');
+                    var button = document.getElementById('toggleButton');
+
+                    if (checkbox.checked) {
+                        button.style.display = 'block';
+                    } else {
+                        button.style.display = 'none';
+                        document.getElementById('codigoPreenchido').style.display = 'none';
+                        button.innerText = 'Exibir';
+                        document.getElementById('clearButton').style.display = 'none'; // Oculta o botão Limpar Campos
+                    }
+                }
+
+                function clearFields() {
+                    document.getElementById('HrEntTer').value = '';
+                    document.getElementById('HrSaiTer').value = '';
+                }
+            </script>
 
 
 
