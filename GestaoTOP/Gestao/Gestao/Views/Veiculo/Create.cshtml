@@ -287,7 +287,7 @@
 
 
 
-
+@* 
             <div class="form-group form-check">
                 <label class="form-check-label">
                     <input class="form-check-input" asp-for="HrEntradaSeg" type="time" step="300" style="background-color: #f0f0f0; color: #333; border: 1px solid #ccc; border-radius: 5px; padding: 8px; width: 150px;" /> @Html.DisplayNameFor(model => model.HrEntradaSeg)
@@ -300,6 +300,13 @@
                 </label>
             </div>
 
+ *@
+
+
+
+
+
+
 
 
 
@@ -310,43 +317,60 @@
                 </label>
             </div>
 
-@* 
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="HrEntTer" type="time" step="300" style="background-color: #f0f0f0; color: #333; border: 1px solid #ccc; border-radius: 5px; padding: 8px; width: 150px;" /> @Html.DisplayNameFor(model => model.HrEntTer)
-                </label>
-            </div>
-
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="HrSaiTer" type="time" step="300" style="background-color: #f0f0f0; color: #333; border: 1px solid #ccc; border-radius: 5px; padding: 8px; width: 150px;" /> @Html.DisplayNameFor(model => model.HrSaiTer)
-                </label>
-            </div>
-
- *@
 
 
-            <button onclick="preencherCodigo()">Exibir</button>
+            <button id="toggleButton" onclick="toggleVisibility()">Exibir</button>
 
             <div id="codigoPreenchido" style="display:none;">
                 <div class="form-group form-check">
                     <label class="form-check-label">
-                        <input class="form-check-input" asp-for="HrEntTer" type="time" step="300" style="background-color: #f0f0f0; color: #333; border: 1px solid #ccc; border-radius: 5px; padding: 8px; width: 150px;" /> @Html.DisplayNameFor(model => model.HrEntTer)
+                        <input class="form-check-input" id="HrEntTer" asp-for="HrEntTer" type="time" step="300" style="background-color: #f0f0f0; color: #333; border: 1px solid #ccc; border-radius: 5px; padding: 8px; width: 150px;" onchange="checkInputs()" /> @Html.DisplayNameFor(model => model.HrEntTer)
                     </label>
                 </div>
 
                 <div class="form-group form-check">
                     <label class="form-check-label">
-                        <input class="form-check-input" asp-for="HrSaiTer" type="time" step="300" style="background-color: #f0f0f0; color: #333; border: 1px solid #ccc; border-radius: 5px; padding: 8px; width: 150px;" /> @Html.DisplayNameFor(model => model.HrSaiTer)
+                        <input class="form-check-input" id="HrSaiTer" asp-for="HrSaiTer" type="time" step="300" style="background-color: #f0f0f0; color: #333; border: 1px solid #ccc; border-radius: 5px; padding: 8px; width: 150px;" onchange="checkInputs()" /> @Html.DisplayNameFor(model => model.HrSaiTer)
                     </label>
                 </div>
             </div>
 
             <script>
-                function preencherCodigo() {
-                    document.getElementById('codigoPreenchido').style.display = 'block';
+                function toggleVisibility() {
+                    var element = document.getElementById('codigoPreenchido');
+                    var button = document.getElementById('toggleButton');
+
+                    if (element.style.display === 'none') {
+                        element.style.display = 'block';
+                        button.innerText = 'Ocultar';
+                    } else {
+                        element.style.display = 'none';
+                        button.innerText = 'Exibir';
+                    }
+                }
+
+                function checkInputs() {
+                    var hrEntTer = document.getElementById('HrEntTer').value;
+                    var hrSaiTer = document.getElementById('HrSaiTer').value;
+
+                    if (hrEntTer && hrSaiTer) {
+                        setTimeout(function () {
+                            alert('ALERTA! Permitido das ' + hrEntTer + ' às ' + hrSaiTer + ' Horas.');
+                        }, 1000); // 1 segundos de atraso
+                    }
                 }
             </script>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
