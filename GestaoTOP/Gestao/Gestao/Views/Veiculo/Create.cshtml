@@ -455,6 +455,32 @@
                         }
                     });
                 });
+
+
+                document.getElementById('Todos_os_Dias').addEventListener('click', function () {
+                    var exibirButton = document.getElementById('toggleButton');
+                    var camposTerca = document.getElementById('codigoPreenchido');
+                    var limparCamposButton = document.getElementById('clearButton');
+
+                    if (this.checked) {
+                        exibirButton.style.display = 'inline-block'; // Mostra o botão Exibir
+                        camposTerca.style.display = 'none'; // Oculta os campos relacionados à terça-feira
+                        limparCamposButton.style.display = 'none'; // Oculta o botão Limpar Campos
+                    } else {
+                        exibirButton.style.display = 'none'; // Oculta o botão Exibir
+                        camposTerca.style.display = 'none'; // Garante que os campos relacionados à terça-feira permaneçam ocultos
+                        limparCamposButton.style.display = 'none'; // Garante que o botão Limpar Campos permaneça oculto
+                    }
+                });
+
+                // Adicione essa parte para garantir que os campos relacionados à terça-feira permaneçam ocultos inicialmente
+                document.addEventListener('DOMContentLoaded', function () {
+                    var camposTerca = document.getElementById('codigoPreenchido');
+                    var limparCamposButton = document.getElementById('clearButton');
+                    camposTerca.style.display = 'none';
+                    limparCamposButton.style.display = 'none';
+                });
+
             </script>
 
 
@@ -466,14 +492,9 @@
 
 
             *@
-
             @*             <script>
-            document.getElementById('Todos_Dias').addEventListener('click', function () {
             var checkboxes = document.querySelectorAll('input[type="checkbox"][name="DiasPermitido"]');
-            var isChecked = this.checked;
             checkboxes.forEach(function (checkbox) {
-            checkbox.checked = isChecked;
-            });
             });
             </script> *@
 
