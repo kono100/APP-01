@@ -499,6 +499,26 @@
                     CancelarCamposButton.style.display = 'none';
                 });
 
+                function cancelarFields() {
+                    var camposTerca = document.getElementById('codigoPreenchido');
+                    var limparCamposButton = document.getElementById('clearButton');
+                    var cancelarCamposButton = document.getElementById('cancelarButton');
+                    var exibirButton = document.getElementById('toggleButton');
+
+                    // Limpa os campos HrEntTer e HrSaiTer
+                    document.getElementById('HrEntTer').value = '';
+                    document.getElementById('HrSaiTer').value = '';
+
+                    camposTerca.style.display = 'none'; // Oculta os campos relacionados à terça-feira
+                    limparCamposButton.style.display = 'none'; // Oculta o botão Limpar Campos
+                    cancelarCamposButton.style.display = 'none'; // Oculta o botão Cancelar Campos
+                    exibirButton.style.display = 'inline-block'; // Mostra o botão Exibir
+                    // Adicione a linha abaixo para ocultar o botão Ocultar
+                    document.getElementById('toggleButton').innerText = 'Exibir';
+                }
+
+
+
             </script>
 
 
