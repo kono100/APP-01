@@ -323,6 +323,7 @@
 
             <button id="toggleButton" onclick="toggleVisibility()" style="display:none;">Exibir</button>
             <button id="clearButton" onclick="clearFields()" style="display:none;">Limpar Campos</button>
+            <button id="cancelarButton" onclick="cancelarFields()" style="display:none;">Cancelar</button>
 
             <div id="codigoPreenchido" style="display:none;">
                 <div class="form-group form-check">
@@ -347,10 +348,12 @@
                         element.style.display = 'block';
                         button.innerText = 'Ocultar';
                         document.getElementById('clearButton').style.display = 'block'; // Mostra o botão Limpar Campos
+                        document.getElementById('cancelarButton').style.display = 'block'; // Mostra o botão Limpar Campos
                     } else {
                         element.style.display = 'none';
                         button.innerText = 'Exibir';
                         document.getElementById('clearButton').style.display = 'none'; // Oculta o botão Limpar Campos
+                        document.getElementById('cancelarButton').style.display = 'none'; // Oculta o botão Limpar Campos
                     }
                 }
 
@@ -379,10 +382,16 @@
                         document.getElementById('codigoPreenchido').style.display = 'none';
                         button.innerText = 'Exibir';
                         document.getElementById('clearButton').style.display = 'none'; // Oculta o botão Limpar Campos
+                        document.getElementById('cancelarButton').style.display = 'none'; // Oculta o botão Limpar Campos
                     }
                 }
 
                 function clearFields() {
+                    document.getElementById('HrEntTer').value = '';
+                    document.getElementById('HrSaiTer').value = '';
+                }
+
+                function cancelarFields() {
                     document.getElementById('HrEntTer').value = '';
                     document.getElementById('HrSaiTer').value = '';
                 }
@@ -461,15 +470,18 @@
                     var exibirButton = document.getElementById('toggleButton');
                     var camposTerca = document.getElementById('codigoPreenchido');
                     var limparCamposButton = document.getElementById('clearButton');
+                    var CancelarCamposButton = document.getElementById('cancelarButton');
 
                     if (this.checked) {
                         exibirButton.style.display = 'inline-block'; // Mostra o botão Exibir
                         camposTerca.style.display = 'none'; // Oculta os campos relacionados à terça-feira
                         limparCamposButton.style.display = 'none'; // Oculta o botão Limpar Campos
+                        CancelarCamposButton.style.display = 'none'; // Oculta o botão Cancelar Campos
                     } else {
                         exibirButton.style.display = 'none'; // Oculta o botão Exibir
                         camposTerca.style.display = 'none'; // Garante que os campos relacionados à terça-feira permaneçam ocultos
                         limparCamposButton.style.display = 'none'; // Garante que o botão Limpar Campos permaneça oculto
+                        CancelarCamposButton.style.display = 'none'; // Garante que o botão Cancelar permaneça oculto
                     }
                 });
 
@@ -477,8 +489,14 @@
                 document.addEventListener('DOMContentLoaded', function () {
                     var camposTerca = document.getElementById('codigoPreenchido');
                     var limparCamposButton = document.getElementById('clearButton');
+                    var CancelarCamposButton = document.getElementById('cancelarButton');
+
+                    var CancelarCamposButton = document.getElementById('clearButton');
+                    var CancelarCamposButton = document.getElementById('cancelarButton');
                     camposTerca.style.display = 'none';
                     limparCamposButton.style.display = 'none';
+
+                    CancelarCamposButton.style.display = 'none';
                 });
 
             </script>
