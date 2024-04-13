@@ -107,17 +107,13 @@ namespace Gestao.Migrations
                     b.Property<bool>("Domingo")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime>("HrEntTer")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("HrEntTer")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("HrEntradaSeg")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("HrSaiTer")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("HrSaidaSeg")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("HrSaiTer")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Marca")
                         .IsRequired()

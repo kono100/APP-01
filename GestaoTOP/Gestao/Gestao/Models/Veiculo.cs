@@ -25,15 +25,15 @@ namespace Gestao.Models
 
         public bool Segunda { get; set; }
 
-        public DateTime HrEntradaSeg { get; set; }
+        //public string HrEntradaSeg { get; set; }
 
-        public DateTime HrSaidaSeg { get; set; }
+        //public string HrSaidaSeg { get; set; }
 
         public bool Terca { get; set; }
 
-        public DateTime HrEntTer { get; set; }
+        public string HrEntTer { get; set; }
 
-        public DateTime HrSaiTer { get; set; }
+        public string HrSaiTer { get; set; }
 
         public bool Quarta { get; set; }
 

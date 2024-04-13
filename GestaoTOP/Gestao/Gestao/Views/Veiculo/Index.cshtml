@@ -47,11 +47,11 @@
             </th>
 
             <th>
-                @Html.DisplayNameFor(model => model.HrEntradaSeg)
+                @Html.DisplayNameFor(model => model.HrEntTer)
             </th>
 
             <th>
-                @Html.DisplayNameFor(model => model.HrSaidaSeg)
+                @Html.DisplayNameFor(model => model.HrSaiTer)
             </th>
 
 @*             <th>
@@ -102,14 +102,15 @@
                     @Html.DisplayFor(modelItem => item.Tag)
                 </td>
 
-                <td>
-                    @item.HrEntradaSeg.ToString("HH:mm")
-                </td>
 
                 <td>
-                    @item.HrSaidaSeg.ToString("HH:mm")
+                    @Html.DisplayFor(modelItem => item.HrEntTer)
                 </td>
 
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.HrSaiTer)
+                </td>
 
 @*                 <td>
                     @if(item.Segunda == true)

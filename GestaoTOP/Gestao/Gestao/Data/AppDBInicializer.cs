@@ -131,7 +131,11 @@ namespace Gestao.Data
                             Sabado = true,
                             Domingo = true,
                             Todos_os_Dias = false,
-                            fk_MoradorID = 1
+                            fk_MoradorID = 1,
+                            //HrEntradaSeg = "00:10",
+                            //HrSaidaSeg = "23:32",
+                            HrEntTer = "10:10",
+                            HrSaiTer = "20:30"
                         },
 
                         new Veiculo()
@@ -149,7 +153,11 @@ namespace Gestao.Data
                             Sabado = false,
                             Domingo = false,
                             Todos_os_Dias = false,
-                            fk_MoradorID = 2
+                            fk_MoradorID = 2,
+                            //HrEntradaSeg = "00:10",
+                            //HrSaidaSeg = "23:32",
+                            HrEntTer = "10:10",
+                            HrSaiTer = "20:30"
                         },
 
                         new Veiculo()
@@ -167,7 +175,11 @@ namespace Gestao.Data
                             Sabado = true,
                             Domingo = true,
                             Todos_os_Dias = false,
-                            fk_MoradorID = 2
+                            fk_MoradorID = 2,
+                            //HrEntradaSeg = "00:10",
+                            //HrSaidaSeg = "23:32",
+                            HrEntTer = "10:10",
+                            HrSaiTer = "20:30"
                         },
 
 
@@ -186,7 +198,11 @@ namespace Gestao.Data
                             Sabado = true,
                             Domingo = true,
                             Todos_os_Dias = true,
-                            fk_MoradorID = 3
+                            fk_MoradorID = 3,
+                            //HrEntradaSeg = "00:10",
+                            //HrSaidaSeg = "23:32",
+                            HrEntTer = "10:10",
+                            HrSaiTer = "20:30"
                         },
                     });
                     context.SaveChanges();
