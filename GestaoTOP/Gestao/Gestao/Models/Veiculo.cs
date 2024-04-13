@@ -31,9 +31,9 @@ namespace Gestao.Models
 
         public bool Terca { get; set; }
 
-        public string HrEntTer { get; set; }
+        public string? HrEntTer { get; set; }
 
-        public string HrSaiTer { get; set; }
+        public string? HrSaiTer { get; set; }
 
         public bool Quarta { get; set; }
 
