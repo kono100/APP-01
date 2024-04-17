@@ -57,6 +57,10 @@ namespace Gestao.Controllers
             IFormFile uploadedImage = Img.FirstOrDefault();
             MemoryStream ms = new MemoryStream();
             if (Img.Count > 0)
+            {
+                uploadedImage.OpenReadStream().CopyTo(ms);
+                Visitante.Foto = ms.ToArray();
+            }
 
 
 
@@ -108,8 +112,33 @@ namespace Gestao.Controllers
         //POST EDIT
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long? id, Visitante Visitante)
+        public async Task<IActionResult> Edit(long? id, Visitante Visitante, IList<IFormFile> Img)
         {
+
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            //var dadosAntigos = _context.Visitante.AsNoTracking().FirstOrDefault(p => p.Id==id);
+            var dadosAntigos = _context.Visitante.AsNoTracking().FirstOrDefault(p => p.VisitanteID == id);
+
+
+
+            IFormFile uploadedImage = Img.FirstOrDefault();
+            MemoryStream ms = new MemoryStream();
+            if (Img.Count > 0)
+            {
+                uploadedImage.OpenReadStream().CopyTo(ms);
+                Visitante.Foto = ms.ToArray();
+            }
+            else
+            {
+                Visitante.Foto = dadosAntigos.Foto;
+
+            }
+
+
             if (ModelState.IsValid)
             {
                 try
