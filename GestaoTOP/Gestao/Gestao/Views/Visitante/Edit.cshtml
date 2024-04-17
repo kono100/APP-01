@@ -49,6 +49,28 @@
                 <span asp-validation-for="Observacao" class="text-danger"></span>
             </div>
 
+            <br />
+
+
+            <div class="form-group">
+                <label asp-for="Foto" class="control-label">Foto Atual</label>
+                @{
+                    try
+                    {
+                        var base64 = Convert.ToBase64String(Model.Foto);
+                        if (!string.IsNullOrEmpty(base64))
+                        {
+                            var imgSrc = String.Format("data:image/png;base64,{0}", base64);
+                            <img class="img-fluid" src="@imgSrc" width="300" />
+                        }
+                    }
+                    catch
+                    {
+                        <img class="img-fluid" src="http://www.puspfc.usp.br/sistemas/prefeitura/imgs/sem_foto.png" width="150" />
+                    }
+                }
+            </div>
+
 
             <div class="form-group">
                 <label asp-for="Foto" class="control-label">Trocar Foto</label>

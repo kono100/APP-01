@@ -50,14 +50,22 @@
             @Html.DisplayFor(model => model.Observacao)
         </dd>
 
+
+
         <div class="form-group">
+
+            <dt class="col-sm-2">
+                @*             @Html.DisplayNameFor(model => model.Foto) *@ <label>Foto</label>
+            </dt>
+
+
             @{
                 try
                 {
                     var base64 = Convert.ToBase64String(Model.Foto);
                     if (!string.IsNullOrEmpty(base64))
                     {
-                        var imgSrc = String.Format("data:image/png:base64,{0}", base64);
+                        var imgSrc = String.Format("data:image/png;base64,{0}", base64); // Correção aqui
                         <img class="img-fluid" src="@imgSrc" width="300" />
                     }
                 }
@@ -66,7 +74,6 @@
                     <img class="img-fluid" src="http://www.puspfc.usp.br/sistemas/prefeitura/imgs/sem_foto.png" width="150" />
                 }
             }
-
         </div>
 
 
