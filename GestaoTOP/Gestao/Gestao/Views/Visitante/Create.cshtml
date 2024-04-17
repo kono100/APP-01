@@ -50,6 +50,12 @@
             </div>
 
             <div class="form-group">
+                <label asp-for="Foto" class="control-label"></label>
+                <input type="file" name="Img" id="Img" class="form-control" />
+                <span asp-validation-for="Foto" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
                 <label asp-for="fk_MoradorID" class="control-label">Morador Associado</label>
                 <select asp-for="fk_MoradorID" class="form-control"
                         asp-items="@(new SelectList(ViewBag.Morador, "MoradorID", "Nome"))">

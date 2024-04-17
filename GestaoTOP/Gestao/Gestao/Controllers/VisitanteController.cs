@@ -51,8 +51,15 @@ namespace Gestao.Controllers
         //POST Visitante/CREATE
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Visitante Visitante)
+        public async Task<IActionResult> Create(Visitante Visitante, IList<IFormFile> Img)
         {
+
+            IFormFile uploadedImage = Img.FirstOrDefault();
+            MemoryStream ms = new MemoryStream();
+            if (Img.Count > 0)
+
+
+
             try
             {
                 if (ModelState.IsValid)

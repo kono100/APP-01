@@ -108,11 +108,9 @@ namespace Gestao.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("HrEntTer")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("HrSaiTer")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Marca")
@@ -184,6 +182,9 @@ namespace Gestao.Migrations
                     b.Property<string>("EndDate")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<byte[]>("Foto")
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<string>("Nome")
                         .IsRequired()

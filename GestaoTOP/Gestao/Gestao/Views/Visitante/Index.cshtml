@@ -42,6 +42,10 @@
                 @Html.DisplayNameFor(model => model.Observacao)
             </th> *@
 
+            <th>
+                @Html.DisplayNameFor(model => model.Foto)
+            </th>
+
 
             <th>
                 @Html.DisplayNameFor(model => model.Morador) Associado
@@ -77,6 +81,25 @@
                     @Html.DisplayFor(modelItem => item.Observacao)
                 </td> *@
 
+
+
+                <td>
+                    @{
+                        try
+                        {
+                            var base64 = Convert.ToBase64String(item.Foto);
+                            if (!string.IsNullOrEmpty(base64))
+                            {
+                                var imgSrc = String.Format("data:image/png;base64,{0}", base64);
+                                <img class="img-fluid" src="@imgSrc" width="100" />
+                            }
+                        }
+                        catch
+                        {
+                            <img class="img-fluid" src="http://www.puspfc.usp.br/sistemas/prefeitura/imgs/sem_foto.png" width="70" />
+                        }
+                    }
+                </td>
 
 
 

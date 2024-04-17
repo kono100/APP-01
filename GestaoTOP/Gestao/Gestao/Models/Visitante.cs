@@ -19,6 +19,8 @@ namespace Gestao.Models
 
         public string CPF { get; set; }
 
+        public byte[]? Foto { get; set; }
+
         public string? Observacao { get; set; }
 
 
