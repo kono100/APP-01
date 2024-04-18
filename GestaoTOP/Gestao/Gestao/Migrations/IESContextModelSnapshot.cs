@@ -171,11 +171,27 @@ namespace Gestao.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long?>("VisitanteID"));
 
+                    b.Property<string>("Bairro")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("CPF")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Cep")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Complemento")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("DataNasc")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Ddd")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -186,11 +202,35 @@ namespace Gestao.Migrations
                     b.Property<byte[]>("Foto")
                         .HasColumnType("varbinary(max)");
 
+                    b.Property<string>("Gia")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Ibge")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Localidade")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Logradouro")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Observacao")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Siafi")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Uf")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<long?>("fk_MoradorID")
