@@ -1,6 +1,7 @@
 using Gestao.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
+using BuscaCEP.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 //APONTAMENTO DO BANCO
@@ -11,6 +12,11 @@ builder.Services.AddDbContext<Gestao.Data.IESContext>(options =>
         .Configuration
         .GetConnectionString("Gestao")); /*MESMO NOME QUE NO APPSETTINGS*/
 });
+
+
+// INJEÇÃO DE DEPENDÊNCIA E SINGLETON
+builder.Services.AddHttpClient();
+builder.Services.AddSingleton<CorreiosService>();
 
 //builder.Services.AddDefaultIdentity<IdentityUser>()
 //    .AddDefaultTokenProviders()
