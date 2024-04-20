@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "F99o8IY65v2chub38xJlLrDFYIwjKSotgTD9i88C2GA=",
+  "Hash": "liVAIMqw0LvUES+nHiHMswvBoQxP7pQcl33lZPnE60Q=",
   "Source": "Gestao",
   "BasePath": "_content/Gestao",
   "Mode": "Default",
@@ -1288,6 +1288,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Img\\imagem2.png"
+    },
+    {
+      "Identity": "C:\\Users\\User\\Desktop\\APP-01\\GestaoTOP\\Gestao\\Gestao\\wwwroot\\Img\\Loading.gif",
+      "SourceId": "Gestao",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\APP-01\\GestaoTOP\\Gestao\\Gestao\\wwwroot\\",
+      "BasePath": "_content/Gestao",
+      "RelativePath": "Img/Loading.gif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Img\\Loading.gif"
     },
     {
       "Identity": "C:\\Users\\User\\Desktop\\APP-01\\GestaoTOP\\Gestao\\Gestao\\wwwroot\\Img\\logo-mrv.png",

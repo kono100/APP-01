@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\Gestao.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\User\\Desktop\\APP-01\\GestaoTOP\\Gestao\\Gestao\\wwwroot\\Img\\Loading.gif",
+      "PackagePath": "staticwebassets\\Img\\Loading.gif"
+    },
+    {
       "Id": "C:\\Users\\User\\Desktop\\APP-01\\GestaoTOP\\Gestao\\Gestao\\wwwroot\\Img\\download.jpg",
       "PackagePath": "staticwebassets\\Img\\download.jpg"
     },

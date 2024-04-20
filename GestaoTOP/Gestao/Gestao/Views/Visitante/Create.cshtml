@@ -10,103 +10,94 @@
 <h4>Visitante</h4>
 <hr />
 
-
-
-
-
-
-
-
 <h2>Busca CEP</h2>
 
-<form id="form-cep" method="post" action="@Url.Action("BuscarEnderecoPorCep", "Cep")">
-    <div class="form-group row col-md-12">
-        <label asp-for="Cep" class="control-label col-md-10"></label>
 
-
-        <input asp-for="Cep" class="form-control col-md-2" maxlength="8" required />
-        <input type="submit" value="Buscar" id="btnBuscar" class="btn btn-primary btn-sm" style="margin-top:-3px;" />
-        <span id="loader" style="display:none;">
-            <img src="~/Img/Loading.gif" alt="Carregando..." class="img-fluid" style="width:30px;" />
-        </span>
-
-    </div>
-</form>
-
-
-<div class="col-sm-7">
-    <hr />
-</div>
-
-
-@if (Model != null)
-{
-
-    <div id="endereco">
-        <h5>Endereço encontrado</h5>
-        <p>
-            <label style="width:120px;">
-                <strong>Logradouro:</strong>
-            </label> @Model.Logradouro<br />
-
-            <label style="width:120px;">
-                <strong>Bairro:</strong>
-            </label> @Model.Bairro<br />
-
-            <label style="width:120px;">
-                <strong>Cidade / UF:</strong>
-            </label> @Model.Localidade / @Model.Uf
-        </p>
-    </div>
-
-}
-else
-{
-    <div id="mensagem">
-        <h3>
-            @Html.Raw(TempData["Mensagem"])<br />
-        </h3>
-    </div>
-}
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    $(document).ready(function () {
-        $("#form-cep").submit(function () {
-            // Exibir o ícone de carregamento
-            $("#loader").show();
-            // Esconder o botão
-            $("#btnBuscar").replaceWith(loader);
-        });
-    });
-</script>
-
-
-
-
-
-
+  
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="col-md-4">
+                <label asp-for="Cep" class="form-label">CEP</label>
+                <div class="input-group">
+                    <!-- Adicione uma div com a classe "input-group" -->
+                    <input asp-for="Cep" type="text" class="form-control" id="cleave-cep" />
+                    <button type="button" class="btn btn-primary" id="search">Consultar Cep</button> <!-- Use a classe "btn" para estilizar o botão -->
+                </div>
+                <span asp-validation-for="Cep" class="text-danger"></span>
+            </div>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    document.getElementById('search').addEventListener('click', function (e) {
+                        e.preventDefault();
+                        var cep = document.getElementById('cleave-cep').value.replace(/\D/g, ''); // Alterado para pegar o valor do CEP
+                        var xhr = new XMLHttpRequest();
+                        xhr.open('GET', 'https://viacep.com.br/ws/' + cep + '/json/', true); // Correção: Adicionado '/json/' no final da URL
+                        xhr.onreadystatechange = function () {
+                            if (xhr.readyState === 4) {
+                                if (xhr.status === 200) {
+                                    var data = JSON.parse(xhr.responseText);
+                                    // Preenche os campos de entrada com os valores obtidos da API
+                                    document.getElementById('bairro').value = data['bairro']; // Alterado para 'bairro'
+                                    document.getElementById('localidade').value = data['localidade']; // Alterado para 'localidade'
+                                    document.getElementById('logradouro').value = data['logradouro']; // Adicionado para 'logradouro'
+                                    document.getElementById('uf').value = data['uf']; // Adicionado para 'uf'
+                                    // Preencha os outros campos de entrada conforme necessário
+                                } else {
+                                    alert('Erro ao buscar informações do CEP.'); // Correção: Mensagem de erro para CEP
+                                }
+                            }
+                        };
+                        xhr.send();
+                    });
+                });
+            </script>
+
+
+
+
+
+
+
+            <div class="form-group">
+                <label asp-for="Bairro" class="control-label">Bairro</label>
+                <input asp-for="Bairro" class="form-control" id="bairro" />
+                <span asp-validation-for="Bairro" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Localidade" class="control-label">Localidade</label>
+                <input asp-for="Localidade" class="form-control" id="localidade" />
+                <span asp-validation-for="Localidade" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Logradouro" class="control-label">Logradouro</label>
+                <input asp-for="Logradouro" class="form-control" id="logradouro" />
+                <span asp-validation-for="Logradouro" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Uf" class="control-label">UF</label>
+                <input asp-for="Uf" class="form-control" id="uf" />
+                <span asp-validation-for="Uf" class="text-danger"></span>
+            </div>
+
+
             <div class="form-group">
                 <label asp-for="Nome" class="control-label">Nome Completo</label>
                 <input asp-for="Nome" class="form-control" />
                 <span asp-validation-for="Nome" class="text-danger"></span>
             </div>
 
-
-
             <div class="form-group">
-                <label asp-for="CPF" class="control-label"></label>
+                <label asp-for="CPF" class="control-label">CPF</label>
                 <input asp-for="CPF" class="form-control" />
                 <span asp-validation-for="CPF" class="text-danger"></span>
             </div>
-
-
-
-
 
             <div class="form-group">
                 <label asp-for="DataNasc" class="control-label">Data de Nascimento</label>
@@ -121,13 +112,13 @@ else
             </div>
 
             <div class="form-group">
-                <label asp-for="Observacao" class="control-label">Observação  (Opcinonal)</label>
+                <label asp-for="Observacao" class="control-label">Observação  (Opcional)</label>
                 <input asp-for="Observacao" class="form-control" />
                 <span asp-validation-for="Observacao" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label asp-for="Foto" class="control-label"></label>
+                <label asp-for="Foto" class="control-label">Foto</label>
                 <input type="file" name="Img" id="Img" class="form-control" />
                 <span asp-validation-for="Foto" class="text-danger"></span>
             </div>
