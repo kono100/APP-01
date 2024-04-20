@@ -24,6 +24,8 @@ namespace Gestao.Models
         public string Telefone { get; set; }
 
 
+        public byte[]? Foto1 { get; set; }
+
 
 
         public IList<Veiculo>? Veiculos { get; set; }

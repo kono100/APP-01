@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "Delete";
 }
-@section styles{
+@section styles {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.4/js/bootstrap.min.js"></script>
 }
@@ -60,6 +60,28 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Telefone)
         </dd>
+
+
+        <dt class="col-sm-2">
+            @* @Html.DisplayNameFor(model => model.Foto) *@ <label>Foto</label>
+        </dt>
+        @{
+            try
+            {
+                var base64 = Convert.ToBase64String(Model.Foto1);
+                if (!string.IsNullOrEmpty(base64))
+                {
+                    var imgSrc = String.Format("data:image/png;base64,{0}", base64); // Correção aqui
+                    <img class="img-fluid" src="@imgSrc" style="max-width: 300px;" />
+                }
+            }
+            catch
+            {
+                <img class="img-fluid" src="http://www.puspfc.usp.br/sistemas/prefeitura/imgs/sem_foto.png" style="max-width: 150px;" />
+            }
+        }
+
+
 
 
     </dl>
@@ -119,4 +141,3 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.min.js"></script>
 }
-

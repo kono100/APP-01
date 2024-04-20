@@ -11,7 +11,7 @@ namespace Gestao.Controllers
     {
         private readonly IESContext _context;
 
-        //METODO CONSTRUTOR PARA INJETAR O DB NO _CONTEXT E TER ACCESSO AOS DADOS
+        // Método construtor para injetar o DB no _context e ter acesso aos dados
         public MoradorController(IESContext context)
         {
             this._context = context;
@@ -19,32 +19,39 @@ namespace Gestao.Controllers
 
         public async Task<IActionResult> Index()
         {
-            //VAI PERCORRER A TABELA INTEIRA E VAI MANDAR ORDENADO PRA VIEW (FAMOSO SELECT * FROM)
-            return View(await _context.Morador.OrderBy
-                (c => c.Nome).ToListAsync());
+            // Vai percorrer a tabela inteira e mandar ordenado pra view (equivalente a SELECT * FROM)
+            return View(await _context.Morador.OrderBy(c => c.Nome).ToListAsync());
         }
 
-        //GET: CREATE
+        // GET: Morador/Create
         [HttpGet]
         public IActionResult Create()
         {
-            var instituicoes = _context.Morador.OrderBy(i => i.Nome).ToList();
-            instituicoes.Insert(0, new Morador()
+            var moradores = _context.Morador.OrderBy(i => i.Nome).ToList();
+            moradores.Insert(0, new Morador()
             {
                 MoradorID = 0,
                 Nome = "Selecione o Morador"
-
             });
 
-            ViewBag.Morador = instituicoes;
+            ViewBag.Morador = moradores;
             return View();
         }
 
-        //POST CREATE
+        // POST Morador/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Morador Morador)
+        public async Task<IActionResult> Create(Morador Morador, IList<IFormFile> Img)
         {
+
+            IFormFile uploadedImage = Img.FirstOrDefault();
+            MemoryStream ms = new MemoryStream();
+            if (Img.Count > 0)
+            {
+                uploadedImage.OpenReadStream().CopyTo(ms);
+                Morador.Foto1 = ms.ToArray();
+            }
+
             try
             {
                 if (ModelState.IsValid)
@@ -62,7 +69,7 @@ namespace Gestao.Controllers
 
         }
 
-        //GET EDIT
+        // GET: Morador/Edit
         [HttpGet]
         public async Task<IActionResult> Edit(long? id)
         {
@@ -71,8 +78,7 @@ namespace Gestao.Controllers
                 return NotFound();
             }
 
-            var Morador = await _context.Morador.SingleOrDefaultAsync
-                (m => m.MoradorID == id);
+            var Morador = await _context.Morador.SingleOrDefaultAsync(m => m.MoradorID == id);
 
             if (Morador == null)
             {
@@ -87,11 +93,31 @@ namespace Gestao.Controllers
         }
 
 
-        //POST EDIT
+        // POST Morador/Edit
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long? id, Morador Morador)
+        public async Task<IActionResult> Edit(long? id, Morador Morador, IList<IFormFile> Img)
         {
+
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var dadosAntigos = _context.Morador.AsNoTracking().FirstOrDefault(p => p.MoradorID == id);
+
+            IFormFile uploadedImage = Img.FirstOrDefault();
+            MemoryStream ms = new MemoryStream();
+            if (Img.Count > 0)
+            {
+                uploadedImage.OpenReadStream().CopyTo(ms);
+                Morador.Foto1 = ms.ToArray();
+            }
+            else
+            {
+                Morador.Foto1 = dadosAntigos.Foto1;
+            }
+
             if (ModelState.IsValid)
             {
                 try
@@ -111,7 +137,7 @@ namespace Gestao.Controllers
             return View(Morador);
         }
 
-        //DETALHES
+        // DETAILS
         public async Task<IActionResult> Details(long? id)
         {
             if (id == null)
@@ -119,8 +145,7 @@ namespace Gestao.Controllers
                 return NotFound();
             }
 
-            var Morador = await _context.Morador.SingleOrDefaultAsync
-                (m => m.MoradorID == id);
+            var Morador = await _context.Morador.SingleOrDefaultAsync(m => m.MoradorID == id);
 
             if (Morador == null)
             {
@@ -129,7 +154,7 @@ namespace Gestao.Controllers
             return View(Morador);
         }
 
-        //GET DELETE
+        // GET Morador/Delete
         [HttpGet]
         public async Task<IActionResult> Delete(long? id)
         {
@@ -138,8 +163,7 @@ namespace Gestao.Controllers
                 return NotFound();
             }
 
-            var Morador = await _context.Morador
-                .SingleOrDefaultAsync(d => d.MoradorID == id);
+            var Morador = await _context.Morador.SingleOrDefaultAsync(d => d.MoradorID == id);
 
             if (Morador == null)
             {
@@ -148,7 +172,7 @@ namespace Gestao.Controllers
             return View(Morador);
         }
 
-        //POST DELETE
+        // POST Morador/Delete
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(long? id)
@@ -157,13 +181,11 @@ namespace Gestao.Controllers
 
             if (relacionados.Any())
             {
-                TempData["Erro"] = $"Não é possível excluir a Morador, pois existem os Veiculos {relacionados} associados a ela.";
+                TempData["Erro"] = $"Não é possível excluir o Morador, pois existem os Veiculos associados a ele.";
                 return RedirectToAction(nameof(Index));
-
             }
 
-            var Morador = await _context.Morador.SingleOrDefaultAsync
-                    (m => m.MoradorID == id);
+            var Morador = await _context.Morador.SingleOrDefaultAsync(m => m.MoradorID == id);
             _context.Morador.Remove(Morador);
             await _context.SaveChangesAsync();
 
@@ -171,7 +193,5 @@ namespace Gestao.Controllers
 
             return RedirectToAction(nameof(Index));
         }
-
-
     }
 }
