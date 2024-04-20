@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\APP-01\\GestaoTOP\\Gestao\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{ACB5ECA7-1199-4B5F-857F-72CBB0694E37}|Gestao\\Gestao.csproj|c:\\users\\user\\desktop\\app-01\\gestaotop\\gestao\\gestao\\views\\visitante\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{ACB5ECA7-1199-4B5F-857F-72CBB0694E37}|Gestao\\Gestao.csproj|solutionrelative:gestao\\views\\visitante\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{ACB5ECA7-1199-4B5F-857F-72CBB0694E37}|Gestao\\Gestao.csproj|c:\\users\\user\\desktop\\app-01\\gestaotop\\gestao\\gestao\\views\\visitante\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{ACB5ECA7-1199-4B5F-857F-72CBB0694E37}|Gestao\\Gestao.csproj|solutionrelative:gestao\\views\\visitante\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACB5ECA7-1199-4B5F-857F-72CBB0694E37}|Gestao\\Gestao.csproj|c:\\users\\user\\desktop\\app-01\\gestaotop\\gestao\\gestao\\views\\visitante\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ACB5ECA7-1199-4B5F-857F-72CBB0694E37}|Gestao\\Gestao.csproj|solutionrelative:gestao\\views\\visitante\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACB5ECA7-1199-4B5F-857F-72CBB0694E37}|Gestao\\Gestao.csproj|c:\\users\\user\\desktop\\app-01\\gestaotop\\gestao\\gestao\\views\\visitante\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ACB5ECA7-1199-4B5F-857F-72CBB0694E37}|Gestao\\Gestao.csproj|solutionrelative:gestao\\views\\visitante\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACB5ECA7-1199-4B5F-857F-72CBB0694E37}|Gestao\\Gestao.csproj|c:\\users\\user\\desktop\\app-01\\gestaotop\\gestao\\gestao\\views\\visitante\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ACB5ECA7-1199-4B5F-857F-72CBB0694E37}|Gestao\\Gestao.csproj|solutionrelative:gestao\\views\\visitante\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{ACB5ECA7-1199-4B5F-857F-72CBB0694E37}|Gestao\\Gestao.csproj|c:\\users\\user\\desktop\\app-01\\gestaotop\\gestao\\gestao\\models\\visitante.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,10 +25,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{ACB5ECA7-1199-4B5F-857F-72CBB0694E37}|Gestao\\Gestao.csproj|c:\\users\\user\\desktop\\app-01\\gestaotop\\gestao\\gestao\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{ACB5ECA7-1199-4B5F-857F-72CBB0694E37}|Gestao\\Gestao.csproj|solutionrelative:gestao\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ACB5ECA7-1199-4B5F-857F-72CBB0694E37}|Gestao\\Gestao.csproj|c:\\users\\user\\desktop\\app-01\\gestaotop\\gestao\\gestao\\views\\visitante\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{ACB5ECA7-1199-4B5F-857F-72CBB0694E37}|Gestao\\Gestao.csproj|solutionrelative:gestao\\views\\visitante\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{ACB5ECA7-1199-4B5F-857F-72CBB0694E37}|Gestao\\Gestao.csproj|c:\\users\\user\\desktop\\app-01\\gestaotop\\gestao\\gestao\\migrations\\20240420015306_initial3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -33,10 +37,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{ACB5ECA7-1199-4B5F-857F-72CBB0694E37}|Gestao\\Gestao.csproj|c:\\users\\user\\desktop\\app-01\\gestaotop\\gestao\\gestao\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{ACB5ECA7-1199-4B5F-857F-72CBB0694E37}|Gestao\\Gestao.csproj|solutionrelative:gestao\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ACB5ECA7-1199-4B5F-857F-72CBB0694E37}|Gestao\\Gestao.csproj|c:\\users\\user\\desktop\\app-01\\gestaotop\\gestao\\gestao\\views\\visitante\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{ACB5ECA7-1199-4B5F-857F-72CBB0694E37}|Gestao\\Gestao.csproj|solutionrelative:gestao\\views\\visitante\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{ACB5ECA7-1199-4B5F-857F-72CBB0694E37}|Gestao\\Gestao.csproj|c:\\users\\user\\desktop\\app-01\\gestaotop\\gestao\\gestao\\service\\correiosservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -150,11 +150,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\APP-01\\GestaoTOP\\Gestao\\Gestao\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Gestao\\Views\\Shared\\_Layout.cshtml",
@@ -162,24 +162,24 @@
               "RelativeToolTip": "Gestao\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AQIAAKYAAAAAAAAAAAAAAMwAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-17T02:35:07.858Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-17T02:35:07.858Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 2,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\APP-01\\GestaoTOP\\Gestao\\Gestao\\Views\\Visitante\\Delete.cshtml",
               "RelativeDocumentMoniker": "Gestao\\Views\\Visitante\\Delete.cshtml",
               "ToolTip": "C:\\Users\\User\\Desktop\\APP-01\\GestaoTOP\\Gestao\\Gestao\\Views\\Visitante\\Delete.cshtml",
               "RelativeToolTip": "Gestao\\Views\\Visitante\\Delete.cshtml",
-              "ViewState": "AQIAACcAAAAAAAAAAAAAAFwAAAAAAAAA",
+              "ViewState": "AQIAAE4AAAAAAAAAAAAAAFwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-17T13:54:21.837Z"
+              "WhenOpened": "2024-04-17T13:54:21.837Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "_LoginPartial.cshtml",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\APP-01\\GestaoTOP\\Gestao\\Gestao\\Views\\Shared\\_LoginPartial.cshtml",
               "RelativeDocumentMoniker": "Gestao\\Views\\Shared\\_LoginPartial.cshtml",
@@ -191,38 +191,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\APP-01\\GestaoTOP\\Gestao\\Gestao\\Views\\Visitante\\Edit.cshtml",
               "RelativeDocumentMoniker": "Gestao\\Views\\Visitante\\Edit.cshtml",
               "ToolTip": "C:\\Users\\User\\Desktop\\APP-01\\GestaoTOP\\Gestao\\Gestao\\Views\\Visitante\\Edit.cshtml",
               "RelativeToolTip": "Gestao\\Views\\Visitante\\Edit.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAIAAAA",
+              "ViewState": "AQIAADkAAAAAAAAAAAAgwE8AAAA5AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-04-17T03:05:30.079Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\APP-01\\GestaoTOP\\Gestao\\Gestao\\Views\\Visitante\\Create.cshtml",
               "RelativeDocumentMoniker": "Gestao\\Views\\Visitante\\Create.cshtml",
               "ToolTip": "C:\\Users\\User\\Desktop\\APP-01\\GestaoTOP\\Gestao\\Gestao\\Views\\Visitante\\Create.cshtml",
               "RelativeToolTip": "Gestao\\Views\\Visitante\\Create.cshtml",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAuwBkAAABOAAAA",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAABUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-17T02:42:43.868Z"
+              "WhenOpened": "2024-04-17T02:42:43.868Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\APP-01\\GestaoTOP\\Gestao\\Gestao\\Views\\Visitante\\Details.cshtml",
               "RelativeDocumentMoniker": "Gestao\\Views\\Visitante\\Details.cshtml",
               "ToolTip": "C:\\Users\\User\\Desktop\\APP-01\\GestaoTOP\\Gestao\\Gestao\\Views\\Visitante\\Details.cshtml",
               "RelativeToolTip": "Gestao\\Views\\Visitante\\Details.cshtml",
-              "ViewState": "AQIAABsAAAAAAAAAAAAgwDMAAAAAAAAA",
+              "ViewState": "AQIAAEgAAAAAAAAAAAAAADMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-04-17T02:57:46.185Z",
               "EditorCaption": ""
@@ -241,7 +242,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Visitante.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\APP-01\\GestaoTOP\\Gestao\\Gestao\\Models\\Visitante.cs",
               "RelativeDocumentMoniker": "Gestao\\Models\\Visitante.cs",
@@ -249,12 +250,11 @@
               "RelativeToolTip": "Gestao\\Models\\Visitante.cs",
               "ViewState": "AQIAABQAAAAAAAAAAAAgwBwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-17T02:18:19.761Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-17T02:18:19.761Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "20240420015306_Initial3.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\APP-01\\GestaoTOP\\Gestao\\Gestao\\Migrations\\20240420015306_Initial3.cs",
               "RelativeDocumentMoniker": "Gestao\\Migrations\\20240420015306_Initial3.cs",
@@ -278,7 +278,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\APP-01\\GestaoTOP\\Gestao\\Gestao\\Views\\Cep\\Index.cshtml",
               "RelativeDocumentMoniker": "Gestao\\Views\\Cep\\Index.cshtml",
