@@ -20,64 +20,6 @@
 
 
 
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Cep)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Cep)
-        </dd>
-    </dl>
-
-
-
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Logradouro)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Logradouro)
-        </dd>
-    </dl>
-
-
-
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Bairro)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Bairro)
-        </dd>
-    </dl>
-
-
-
-
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Localidade)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Localidade)
-        </dd>
-    </dl>
-
-
-
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Uf)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Uf)
-        </dd>
-    </dl>
-
-
-
-
-
 
 
     <dl class="row">
@@ -155,9 +97,76 @@
                 <img class="img-fluid" src="http://www.puspfc.usp.br/sistemas/prefeitura/imgs/sem_foto.png" width="150" />
             }
         }
+
+
+
+        <br />
+        <br />
+
+        <h5> Mais informações</h5>
+
+
+
+
+
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Cep)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Cep)
+            </dd>
+        </dl>
+
+
+
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Logradouro)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Logradouro)
+            </dd>
+        </dl>
+
+
+
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Bairro)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Bairro)
+            </dd>
+        </dl>
+
+
+
+
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Localidade)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Localidade)
+            </dd>
+        </dl>
+
+
+
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Uf)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Uf)
+            </dd>
+        </dl>
+
+
     </div>
 
-
+    <br />
 
     <dl class="row">
         <dt class="col-sm-2">Morador associado</dt>
