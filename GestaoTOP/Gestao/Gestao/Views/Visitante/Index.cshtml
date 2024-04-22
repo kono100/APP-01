@@ -18,7 +18,7 @@
 </p>
 
 <table class="table">
-    <thead>
+    <thead class="text-center">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Nome) do Visitante
@@ -55,12 +55,12 @@
             </th>
         </tr>
     </thead>
-    <tbody>
+    <tbody class="text-center">
         @foreach (var item in Model)
         {
             <tr>
 
-                <td>
+                <td class="text-center">
                     @Html.DisplayFor(modelItem => item.Nome)
                 </td>
 
