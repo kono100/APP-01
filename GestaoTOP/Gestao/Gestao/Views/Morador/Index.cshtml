@@ -66,8 +66,13 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nome)
+                <td class="text-center">
+                    @{
+                        var fullName = item.Nome.Split(' ');
+                        var firstName = fullName[0];
+                        var lastName = fullName[fullName.Length - 1];
+                        @Html.DisplayFor(modelItem => firstName) @Html.Raw(" ") @Html.DisplayFor(modelItem => lastName)
+                    }
                 </td>
 
                 <td>

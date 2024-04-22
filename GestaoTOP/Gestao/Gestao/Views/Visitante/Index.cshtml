@@ -61,7 +61,12 @@
             <tr>
 
                 <td class="text-center">
-                    @Html.DisplayFor(modelItem => item.Nome)
+                    @{
+                        var fullName = item.Nome.Split(' ');
+                        var firstName = fullName[0];
+                        var lastName = fullName[fullName.Length - 1];
+                        @Html.DisplayFor(modelItem => firstName) @Html.Raw(" ") @Html.DisplayFor(modelItem => lastName)
+                    }
                 </td>
 
 
