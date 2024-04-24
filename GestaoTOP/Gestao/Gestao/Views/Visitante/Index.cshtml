@@ -107,9 +107,13 @@
                 </td>
 
 
-
                 <td>
-                    @Html.DisplayFor(modelItem => item.Morador.Nome)
+                    @{
+                        var fullNameMorador = item.Morador.Nome.Split(' ');
+                        var firstNameMorador = fullNameMorador[0];
+                        var lastNameMorador = fullNameMorador[fullNameMorador.Length - 1];
+                    }
+                    <p>@Html.DisplayFor(modelItem => firstNameMorador) @Html.Raw(" ") @Html.DisplayFor(modelItem => lastNameMorador)</p>
                 </td>
 
                 <td>
