@@ -7,6 +7,14 @@
       "RelativeMoniker": "D:0:0:{ACB5ECA7-1199-4B5F-857F-72CBB0694E37}|Gestao\\Gestao.csproj|solutionrelative:gestao\\views\\veiculo\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{ACB5ECA7-1199-4B5F-857F-72CBB0694E37}|Gestao\\Gestao.csproj|c:\\users\\user\\desktop\\app-01\\gestaotop\\gestao\\gestao\\views\\reservas\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ACB5ECA7-1199-4B5F-857F-72CBB0694E37}|Gestao\\Gestao.csproj|solutionrelative:gestao\\views\\reservas\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACB5ECA7-1199-4B5F-857F-72CBB0694E37}|Gestao\\Gestao.csproj|c:\\users\\user\\desktop\\app-01\\gestaotop\\gestao\\gestao\\views\\reservas\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ACB5ECA7-1199-4B5F-857F-72CBB0694E37}|Gestao\\Gestao.csproj|solutionrelative:gestao\\views\\reservas\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{ACB5ECA7-1199-4B5F-857F-72CBB0694E37}|Gestao\\Gestao.csproj|c:\\users\\user\\desktop\\app-01\\gestaotop\\gestao\\gestao\\migrations\\20240425025856_initial5.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ACB5ECA7-1199-4B5F-857F-72CBB0694E37}|Gestao\\Gestao.csproj|solutionrelative:gestao\\migrations\\20240425025856_initial5.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -29,14 +37,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{ACB5ECA7-1199-4B5F-857F-72CBB0694E37}|Gestao\\Gestao.csproj|c:\\users\\user\\desktop\\app-01\\gestaotop\\gestao\\gestao\\views\\reservas\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{ACB5ECA7-1199-4B5F-857F-72CBB0694E37}|Gestao\\Gestao.csproj|solutionrelative:gestao\\views\\reservas\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ACB5ECA7-1199-4B5F-857F-72CBB0694E37}|Gestao\\Gestao.csproj|c:\\users\\user\\desktop\\app-01\\gestaotop\\gestao\\gestao\\views\\reservas\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{ACB5ECA7-1199-4B5F-857F-72CBB0694E37}|Gestao\\Gestao.csproj|solutionrelative:gestao\\views\\reservas\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ACB5ECA7-1199-4B5F-857F-72CBB0694E37}|Gestao\\Gestao.csproj|c:\\users\\user\\desktop\\app-01\\gestaotop\\gestao\\gestao\\views\\reservas\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{ACB5ECA7-1199-4B5F-857F-72CBB0694E37}|Gestao\\Gestao.csproj|solutionrelative:gestao\\views\\reservas\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{ACB5ECA7-1199-4B5F-857F-72CBB0694E37}|Gestao\\Gestao.csproj|c:\\users\\user\\desktop\\app-01\\gestaotop\\gestao\\gestao\\views\\reservas\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -214,7 +214,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "20240425025856_Initial5.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\APP-01\\GestaoTOP\\Gestao\\Gestao\\Migrations\\20240425025856_Initial5.cs",
               "RelativeDocumentMoniker": "Gestao\\Migrations\\20240425025856_Initial5.cs",
@@ -227,7 +227,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 2,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\APP-01\\GestaoTOP\\Gestao\\Gestao\\Views\\Reservas\\Edit.cshtml",
               "RelativeDocumentMoniker": "Gestao\\Views\\Reservas\\Edit.cshtml",
@@ -235,11 +235,12 @@
               "RelativeToolTip": "Gestao\\Views\\Reservas\\Edit.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAABMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-20T16:54:25.153Z"
+              "WhenOpened": "2024-04-20T16:54:25.153Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\APP-01\\GestaoTOP\\Gestao\\Gestao\\Views\\Reservas\\Delete.cshtml",
               "RelativeDocumentMoniker": "Gestao\\Views\\Reservas\\Delete.cshtml",
@@ -247,11 +248,12 @@
               "RelativeToolTip": "Gestao\\Views\\Reservas\\Delete.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-20T16:53:44.04Z"
+              "WhenOpened": "2024-04-20T16:53:44.04Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\APP-01\\GestaoTOP\\Gestao\\Gestao\\Views\\Reservas\\Index.cshtml",
               "RelativeDocumentMoniker": "Gestao\\Views\\Reservas\\Index.cshtml",
@@ -263,7 +265,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\APP-01\\GestaoTOP\\Gestao\\Gestao\\Views\\Veiculo\\Index.cshtml",
               "RelativeDocumentMoniker": "Gestao\\Views\\Veiculo\\Index.cshtml",
@@ -275,7 +277,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\APP-01\\GestaoTOP\\Gestao\\Gestao\\Views\\Visitante\\Index.cshtml",
               "RelativeDocumentMoniker": "Gestao\\Views\\Visitante\\Index.cshtml",
@@ -293,7 +295,7 @@
               "RelativeDocumentMoniker": "Gestao\\Views\\Veiculo\\Create.cshtml",
               "ToolTip": "C:\\Users\\User\\Desktop\\APP-01\\GestaoTOP\\Gestao\\Gestao\\Views\\Veiculo\\Create.cshtml",
               "RelativeToolTip": "Gestao\\Views\\Veiculo\\Create.cshtml",
-              "ViewState": "AQIAAIcBAAAAAAAAAAAqwKYBAAAAAAAA",
+              "ViewState": "AQIAADgCAAAAAAAAAAAYwBcCAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-04-06T14:51:01.671Z",
               "EditorCaption": ""
@@ -312,7 +314,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\APP-01\\GestaoTOP\\Gestao\\Gestao\\Views\\Morador\\Index.cshtml",
               "RelativeDocumentMoniker": "Gestao\\Views\\Morador\\Index.cshtml",
@@ -324,7 +326,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Veiculo.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\APP-01\\GestaoTOP\\Gestao\\Gestao\\Models\\Veiculo.cs",
               "RelativeDocumentMoniker": "Gestao\\Models\\Veiculo.cs",
