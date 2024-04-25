@@ -110,7 +110,43 @@ namespace Gestao.Migrations
                     b.Property<bool>("Domingo")
                         .HasColumnType("bit");
 
+                    b.Property<string>("HrEntDom")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("HrEntQua")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("HrEntQui")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("HrEntSab")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("HrEntSeg")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("HrEntSex")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("HrEntTer")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("HrSaiDom")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("HrSaiQua")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("HrSaiQui")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("HrSaiSab")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("HrSaiSeg")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("HrSaiSex")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("HrSaiTer")

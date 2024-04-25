@@ -25,27 +25,56 @@ namespace Gestao.Models
 
         public bool Segunda { get; set; }
 
-        //public string HrEntradaSeg { get; set; }
+        public string? HrEntSeg { get; set; }
+        public string? HrSaiSeg { get; set; }
 
-        //public string HrSaidaSeg { get; set; }
+
 
         public bool Terca { get; set; }
 
         public string? HrEntTer { get; set; }
-
         public string? HrSaiTer { get; set; }
+
+
+
 
         public bool Quarta { get; set; }
 
+        public string? HrEntQua { get; set; }
+        public string? HrSaiQua { get; set; }
+
+
+
+
         public bool Quinta { get; set; }
+
+        public string? HrEntQui { get; set; }
+        public string? HrSaiQui { get; set; }
+
+
 
         public bool Sexta { get; set; }
 
+        public string? HrEntSex { get; set; }
+        public string? HrSaiSex { get; set; }
+
+
         public bool Sabado { get; set; }
+
+        public string? HrEntSab { get; set; }
+        public string? HrSaiSab { get; set; }
+
+
 
         public bool Domingo { get; set; }
 
+        public string? HrEntDom { get; set; }
+        public string? HrSaiDom { get; set; }
+
+
         public bool Todos_os_Dias { get; set; }
+
+
 
 
 
