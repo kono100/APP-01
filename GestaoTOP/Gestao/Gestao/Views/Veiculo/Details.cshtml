@@ -12,7 +12,7 @@
     <dl class="row">
 
         <dt class="col-sm-2">
-@*             @Html.DisplayNameFor(model => model.Nome) *@ <label>Placa</label>
+            @*             @Html.DisplayNameFor(model => model.Nome) *@ <label>Placa</label>
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Placa)
@@ -52,54 +52,226 @@
 
 
 
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Segunda)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Segunda)
-        </dd>
 
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Terca)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Terca)
-        </dd>
+        <!-- Segunda -->
+        @if (Model.Segunda && Model.HrEntSeg != null && Model.HrSaiSeg != null)
+        {
+            <dt class="col-sm-2">
+                Segunda
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Segunda)
+                acesso permitido das @Html.DisplayFor(model => model.HrEntSeg)
+                as @Html.DisplayFor(model => model.HrSaiSeg)
+            </dd>
+        }
+        else if (!Model.Segunda)
+        {
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Segunda)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Segunda) Não Pode Entrar
+            </dd>
+        }
+        else
+        {
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Segunda)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Segunda) Pode acessar Qualquer Momento
+            </dd>
+        }
 
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Quarta)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Quarta)
-        </dd>
+        <!-- Terça -->
+        @if (Model.Terca && Model.HrEntTer != null && Model.HrSaiTer != null)
+        {
+            <dt class="col-sm-2">
+                Terça
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Terca)
+                acesso permitido das @Html.DisplayFor(model => model.HrEntTer)
+                as @Html.DisplayFor(model => model.HrSaiTer)
+            </dd>
+        }
+        else if (!Model.Terca)
+        {
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Terca)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Terca) Não Pode Entrar
+            </dd>
+        }
+        else
+        {
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Terca)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Terca) Pode acessar Qualquer Momento
+            </dd>
+        }
 
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Quinta)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Quinta)
-        </dd>
+        <!-- Quarta -->
+        @if (Model.Quarta && Model.HrEntQua != null && Model.HrSaiQua != null)
+        {
+            <dt class="col-sm-2">
+                Quarta
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Quarta)
+                acesso permitido das @Html.DisplayFor(model => model.HrEntQua)
+                as @Html.DisplayFor(model => model.HrSaiQua)
+            </dd>
+        }
+        else if (!Model.Quarta)
+        {
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Quarta)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Quarta) Não Pode Entrar
+            </dd>
+        }
+        else
+        {
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Quarta)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Quarta) Pode acessar Qualquer Momento
+            </dd>
+        }
 
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Sexta)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Sexta)
-        </dd>
+        <!-- Quinta -->
+        @if (Model.Quinta && Model.HrEntQui != null && Model.HrSaiQui != null)
+        {
+            <dt class="col-sm-2">
+                Quinta
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Quinta)
+                acesso permitido das @Html.DisplayFor(model => model.HrEntQui)
+                as @Html.DisplayFor(model => model.HrSaiQui)
+            </dd>
+        }
+        else if (!Model.Quinta)
+        {
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Quinta)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Quinta) Não Pode Entrar
+            </dd>
+        }
+        else
+        {
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Quinta)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Quinta) Pode acessar Qualquer Momento
+            </dd>
+        }
 
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Sabado)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Sabado)
-        </dd>
+        <!-- Sexta -->
+        @if (Model.Sexta && Model.HrEntSex != null && Model.HrSaiSex != null)
+        {
+            <dt class="col-sm-2">
+                Sexta
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Sexta)
+                acesso permitido das @Html.DisplayFor(model => model.HrEntSex)
+                as @Html.DisplayFor(model => model.HrSaiSex)
+            </dd>
+        }
+        else if (!Model.Sexta)
+        {
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Sexta)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Sexta) Não Pode Entrar
+            </dd>
+        }
+        else
+        {
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Sexta)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Sexta) Pode acessar Qualquer Momento
+            </dd>
+        }
 
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Domingo)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Domingo)
-        </dd>
+        <!-- Sábado -->
+        @if (Model.Sabado && Model.HrEntSab != null && Model.HrSaiSab != null)
+        {
+            <dt class="col-sm-2">
+                Sábado
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Sabado)
+                acesso permitido das @Html.DisplayFor(model => model.HrEntSab)
+                as @Html.DisplayFor(model => model.HrSaiSab)
+            </dd>
+        }
+        else if (!Model.Sabado)
+        {
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Sabado)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Sabado) Não Pode Entrar
+            </dd>
+        }
+        else
+        {
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Sabado)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Sabado) Pode acessar Qualquer Momento
+            </dd>
+        }
+
+        <!-- Domingo -->
+        @if (Model.Domingo && Model.HrEntDom != null && Model.HrSaiDom != null)
+        {
+            <dt class="col-sm-2">
+                Domingo
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Domingo)
+                acesso permitido das @Html.DisplayFor(model => model.HrEntDom)
+                as @Html.DisplayFor(model => model.HrSaiDom)
+            </dd>
+        }
+        else if (!Model.Domingo)
+        {
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Domingo)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Domingo) Não Pode Entrar
+            </dd>
+        }
+        else
+        {
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Domingo)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Domingo) Pode acessar Qualquer Momento
+            </dd>
+        }
+
+
+
 
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Todos_os_Dias)
