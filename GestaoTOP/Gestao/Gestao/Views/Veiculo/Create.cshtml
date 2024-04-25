@@ -77,11 +77,92 @@
             <br />
             <br />
 
+
+
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Segunda" /> @Html.DisplayNameFor(model => model.Segunda)
+                    <input class="form-check-input" id="checkSegunda" asp-for="Segunda" onchange="toggleScriptVisibilitySegunda()" /> @Html.DisplayNameFor(model => model.Segunda)
                 </label>
             </div>
+
+            <a class="btn btn-primary" id="toggleButtonSegunda" onclick="toggleVisibilitySegunda()" style="display:none;">Exibir</a>
+
+
+
+            <div id="codigoPreenchidoSegunda" style="display:none;">
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" id="HrEntSeg" asp-for="HrEntSeg" type="time" step="300" style="background-color: #f0f0f0; color: #333; border: 1px solid #ccc; border-radius: 5px; padding: 8px; width: 150px;" onchange="checkInputsSegunda()" /> @Html.DisplayNameFor(model => model.HrEntSeg)
+                    </label>
+                </div>
+
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" id="HrSaiSeg" asp-for="HrSaiSeg" type="time" step="300" style="background-color: #f0f0f0; color: #333; border: 1px solid #ccc; border-radius: 5px; padding: 8px; width: 150px;" onchange="checkInputsSegunda()" /> @Html.DisplayNameFor(model => model.HrSaiSeg)
+                    </label>
+                </div>
+            </div>
+
+            <script>
+                function toggleVisibilitySegunda() {
+                    var element = document.getElementById('codigoPreenchidoSegunda');
+                    var button = document.getElementById('toggleButtonSegunda');
+
+                    if (element.style.display === 'none') {
+                        element.style.display = 'block';
+                        button.innerText = 'Ocultar';
+                        document.getElementById('clearButtonSegunda').style.display = 'block'; // Mostra o botão Limpar Campos
+                        document.getElementById('cancelarButtonSegunda').style.display = 'block'; // Mostra o botão Limpar Campos
+                    } else {
+                        element.style.display = 'none';
+                        button.innerText = 'Exibir';
+                        document.getElementById('clearButtonSegunda').style.display = 'none'; // Oculta o botão Limpar Campos
+                        document.getElementById('cancelarButtonSegunda').style.display = 'none'; // Oculta o botão Limpar Campos
+                    }
+                }
+
+                function checkInputsSegunda() {
+                    var hrEntSeg = document.getElementById('HrEntSeg').value;
+                    var hrSaiSeg = document.getElementById('HrSaiSeg').value;
+
+                    if (hrEntSeg && hrSaiSeg) {
+                        if (hrEntSeg > hrSaiSeg) {
+                            alert('ALERTA! A hora de entrada não pode ser Menor que a hora de saída.');
+                            document.getElementById('HrSaiSeg').value = '';
+                        } else {
+                            alert('ALERTA! De Segunda-feira entrada Permitida das ' + hrEntSeg + ' às ' + hrSaiSeg + ' Horas.');
+                        }
+                    }
+                }
+
+                function toggleScriptVisibilitySegunda() {
+                    var checkbox = document.getElementById('checkSegunda');
+                    var button = document.getElementById('toggleButtonSegunda');
+
+                    if (checkbox.checked) {
+                        button.style.display = 'block';
+                    } else {
+                        button.style.display = 'none';
+                        document.getElementById('codigoPreenchidoSegunda').style.display = 'none';
+                        button.innerText = 'Exibir';
+                        document.getElementById('clearButtonSegunda').style.display = 'none'; // Oculta o botão Limpar Campos
+                        document.getElementById('cancelarButtonSegunda').style.display = 'none'; // Oculta o botão Limpar Campos
+                    }
+                }
+
+                function clearFieldsSegunda() {
+                    document.getElementById('HrEntSeg').value = '';
+                    document.getElementById('HrSaiSeg').value = '';
+                }
+
+                function cancelarFieldsSegunda() {
+                    document.getElementById('HrEntSeg').value = '';
+                    document.getElementById('HrSaiSeg').value = '';
+                }
+            </script>
+
+            <a class="btn btn-primary" id="clearButtonSegunda" onclick="clearFieldsSegunda()" style="display:none;">Limpar Campos</a>
+            <a class="btn btn-primary" id="cancelarButtonSegunda" onclick="cancelarFieldsSegunda()" style="display:none;">Cancelar</a>
 
 
 
@@ -204,14 +285,11 @@
                     <input class="form-check-input" asp-for="Domingo" /> @Html.DisplayNameFor(model => model.Domingo)
                 </label>
             </div>
-
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Todos_os_Dias" /> @Html.DisplayNameFor(model => model.Todos_os_Dias)
+                    <input id="Todos_os_Dias" class="form-check-input" asp-for="Todos_os_Dias" /> @Html.DisplayNameFor(model => model.Todos_os_Dias)
                 </label>
             </div>
-
-
 
             <script>
                 document.getElementById('Todos_os_Dias').addEventListener('click', function () {
@@ -221,13 +299,7 @@
                         checkbox.checked = isChecked;
                     });
                 });
-            </script>
 
-
-
-
-
-            <script>
                 var todosOsDias = document.getElementById('Todos_os_Dias');
                 var checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
@@ -239,23 +311,22 @@
                     });
                 });
 
-
                 document.getElementById('Todos_os_Dias').addEventListener('click', function () {
                     var exibirButton = document.getElementById('toggleButton');
                     var camposTerca = document.getElementById('codigoPreenchido');
                     var limparCamposButton = document.getElementById('clearButton');
-                    var CancelarCamposButton = document.getElementById('cancelarButton');
+                    var cancelarCamposButton = document.getElementById('cancelarButton');
 
                     if (this.checked) {
                         exibirButton.style.display = 'inline-block'; // Mostra o botão Exibir
                         camposTerca.style.display = 'none'; // Oculta os campos relacionados à terça-feira
                         limparCamposButton.style.display = 'none'; // Oculta o botão Limpar Campos
-                        CancelarCamposButton.style.display = 'none'; // Oculta o botão Cancelar Campos
+                        cancelarCamposButton.style.display = 'none'; // Oculta o botão Cancelar Campos
                     } else {
                         exibirButton.style.display = 'none'; // Oculta o botão Exibir
                         camposTerca.style.display = 'none'; // Garante que os campos relacionados à terça-feira permaneçam ocultos
                         limparCamposButton.style.display = 'none'; // Garante que o botão Limpar Campos permaneça oculto
-                        CancelarCamposButton.style.display = 'none'; // Garante que o botão Cancelar permaneça oculto
+                        cancelarCamposButton.style.display = 'none'; // Garante que o botão Cancelar permaneça oculto
                     }
                 });
 
@@ -263,14 +334,11 @@
                 document.addEventListener('DOMContentLoaded', function () {
                     var camposTerca = document.getElementById('codigoPreenchido');
                     var limparCamposButton = document.getElementById('clearButton');
-                    var CancelarCamposButton = document.getElementById('cancelarButton');
+                    var cancelarCamposButton = document.getElementById('cancelarButton');
 
-                    var CancelarCamposButton = document.getElementById('clearButton');
-                    var CancelarCamposButton = document.getElementById('cancelarButton');
                     camposTerca.style.display = 'none';
                     limparCamposButton.style.display = 'none';
-
-                    CancelarCamposButton.style.display = 'none';
+                    cancelarCamposButton.style.display = 'none';
                 });
 
                 function cancelarFields() {
@@ -290,8 +358,68 @@
                     // Adicione a linha abaixo para ocultar o botão Ocultar
                     document.getElementById('toggleButton').innerText = 'Exibir';
                 }
+            </script>
 
+            <script>
+                document.getElementById('Todos_os_Dias').addEventListener('click', function () {
+                    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+                    var isChecked = this.checked;
+                    checkboxes.forEach(function (checkbox) {
+                        checkbox.checked = isChecked;
+                    });
+                });
 
+                document.getElementById('Todos_os_Dias').addEventListener('click', function () {
+                    var todosOsDias = document.getElementById('Todos_os_Dias');
+                    var exibirButton = document.getElementById('toggleButtonSegunda');
+                    var camposSegunda = document.getElementById('codigoPreenchidoSegunda');
+                    var limparCamposButton = document.getElementById('clearButtonSegunda');
+                    var cancelarCamposButton = document.getElementById('cancelarButtonSegunda');
+
+                    if (this.checked) {
+                        exibirButton.style.display = 'inline-block'; // Mostra o botão Exibir
+                        camposSegunda.style.display = 'none'; // Oculta os campos relacionados à Segunda-feira
+                        limparCamposButton.style.display = 'none'; // Oculta o botão Limpar Campos
+                        cancelarCamposButton.style.display = 'none'; // Oculta o botão Cancelar Campos
+                    } else {
+                        exibirButton.style.display = 'none'; // Oculta o botão Exibir
+                        camposSegunda.style.display = 'none'; // Garante que os campos relacionados à Segunda-feira permaneçam ocultos
+                        limparCamposButton.style.display = 'none'; // Garante que o botão Limpar Campos permaneça oculto
+                        cancelarCamposButton.style.display = 'none'; // Garante que o botão Cancelar permaneça oculto
+                    }
+                });
+
+                // Adicione essa parte para garantir que os campos relacionados à Segunda-feira permaneçam ocultos inicialmente
+                document.addEventListener('DOMContentLoaded', function () {
+                    var camposSegunda = document.getElementById('codigoPreenchidoSegunda');
+                    var limparCamposButton = document.getElementById('clearButtonSegunda');
+                    var cancelarCamposButton = document.getElementById('cancelarButtonSegunda');
+
+                    camposSegunda.style.display = 'none';
+                    limparCamposButton.style.display = 'none';
+                    cancelarCamposButton.style.display = 'none';
+                });
+
+                function clearFieldsSegunda() {
+                    document.getElementById('HrEntSeg').value = '';
+                    document.getElementById('HrSaiSeg').value = '';
+                }
+
+                function cancelarFieldsSegunda() {
+                    document.getElementById('HrEntSeg').value = '';
+                    document.getElementById('HrSaiSeg').value = '';
+
+                    var camposSegunda = document.getElementById('codigoPreenchidoSegunda');
+                    var limparCamposButton = document.getElementById('clearButtonSegunda');
+                    var cancelarCamposButton = document.getElementById('cancelarButtonSegunda');
+                    var exibirButton = document.getElementById('toggleButtonSegunda');
+
+                    camposSegunda.style.display = 'none';
+                    limparCamposButton.style.display = 'none';
+                    cancelarCamposButton.style.display = 'none';
+                    exibirButton.style.display = 'inline-block'; // Mostra o botão "Exibir"
+                    document.getElementById('toggleButtonSegunda').innerText = 'Exibir'; // Atualiza o texto do botão "Exibir"
+                }
 
             </script>
 
