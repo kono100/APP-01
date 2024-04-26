@@ -57,110 +57,1116 @@
 
 
 
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Segunda" /> @Html.DisplayNameFor(model => model.Segunda)
-                </label>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Terca" /> @Html.DisplayNameFor(model => model.Terca)
-                </label>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Quarta" /> @Html.DisplayNameFor(model => model.Quarta)
-                </label>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Quinta" /> @Html.DisplayNameFor(model => model.Quinta)
-                </label>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Sexta" /> @Html.DisplayNameFor(model => model.Sexta)
-                </label>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Sabado" /> @Html.DisplayNameFor(model => model.Sabado)
-                </label>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Domingo" /> @Html.DisplayNameFor(model => model.Domingo)
-                </label>
-            </div>
 
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Todos_os_Dias" /> @Html.DisplayNameFor(model => model.Todos_os_Dias)
-                </label>
-            </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" id="checkSegunda" asp-for="Segunda" onchange="toggleScriptVisibilitySegunda()" /> @Html.DisplayNameFor(model => model.Segunda)
+                        </label>
+                    </div>
 
-
-            <script>
-                document.getElementById('Todos_os_Dias').addEventListener('click', function () {
-                    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
-                    var isChecked = this.checked;
-                    checkboxes.forEach(function (checkbox) {
-                        checkbox.checked = isChecked;
-                    });
-                });
-            </script>
+                    <a class="btn btn-primary" id="toggleButtonSegunda" onclick="toggleVisibilitySegunda()" style="display:none;">Exibir</a>
 
 
 
+                    <div id="codigoPreenchidoSegunda" style="display:none;">
+                        <div class="form-group form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" id="HrEntSeg" asp-for="HrEntSeg" type="time" step="300" style="background-color: #f0f0f0; color: #333; border: 1px solid #ccc; border-radius: 5px; padding: 8px; width: 150px;" onchange="checkInputsSegunda()" /> @Html.DisplayNameFor(model => model.HrEntSeg)
+                            </label>
+                        </div>
 
-
-            <script>
-                var todosOsDias = document.getElementById('Todos_os_Dias');
-                var checkboxes = document.querySelectorAll('input[type="checkbox"]');
-
-                checkboxes.forEach(function (checkbox) {
-                    checkbox.addEventListener('click', function () {
-                        if (todosOsDias.checked && this !== todosOsDias) {
-                            todosOsDias.checked = false;
-                        }
-                    });
-                });
-            </script>
-
-@* 
-            <div class="form-group">
-                <label asp-for="DiasPermitido" class="control-label"></label>
-                <input asp-for="DiasPermitido" class="form-control" />
-                <span asp-validation-for="DiasPermitido" class="text-danger"></span>
-
- *@
-@* 
-            <div class="form-group">
-                            <label class="control-label">DiasPermitido</label>
-                <div>
-                                <label><input type="checkbox" name="DiasPermitido" value="Seg">Segunda-feira</label><br>
-                                <label><input type="checkbox" name="DiasPermitido" value="Terça-feira"> Terça-feira</label><br>
-                                <label><input type="checkbox" name="DiasPermitido" value="Quarta-feira"> Quarta-feira</label><br>
-                                <label><input type="checkbox" name="DiasPermitido" value="Quinta-feira"> Quinta-feira</label><br>
-                                <label><input type="checkbox" name="DiasPermitido" value="Sexta-feira"> Sexta-feira</label><br>
-                                <label><input type="checkbox" name="DiasPermitido" value="Sábado"> Sábado</label><br>
-                                <label><input type="checkbox" name="DiasPermitido" value="Dom">Domingo</label><br>
-                                <label><input type="checkbox" name="DiasPermitido" value="Todos_Dias" id="Todos_Dias">Todos os dias</label>
-                </div>
-                <span class="text-danger"></span>
-            </div>
+                        <div class="form-group form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" id="HrSaiSeg" asp-for="HrSaiSeg" type="time" step="300" style="background-color: #f0f0f0; color: #333; border: 1px solid #ccc; border-radius: 5px; padding: 8px; width: 150px;" onchange="checkInputsSegunda()" /> @Html.DisplayNameFor(model => model.HrSaiSeg)
+                            </label>
+                        </div>
+                    </div>
 
                     <script>
-                        document.getElementById('Todos_Dias').addEventListener('click', function () {
-                            var checkboxes = document.querySelectorAll('input[type="checkbox"][name="DiasPermitido"]');
+                        function toggleVisibilitySegunda() {
+                            var element = document.getElementById('codigoPreenchidoSegunda');
+                            var button = document.getElementById('toggleButtonSegunda');
+
+                            if (element.style.display === 'none') {
+                                element.style.display = 'block';
+                                button.innerText = 'Ocultar';
+                                document.getElementById('clearButtonSegunda').style.display = 'block'; // Mostra o botão Limpar Campos
+                                document.getElementById('cancelarButtonSegunda').style.display = 'block'; // Mostra o botão Limpar Campos
+                            } else {
+                                element.style.display = 'none';
+                                button.innerText = 'Exibir';
+                                document.getElementById('clearButtonSegunda').style.display = 'none'; // Oculta o botão Limpar Campos
+                                document.getElementById('cancelarButtonSegunda').style.display = 'none'; // Oculta o botão Limpar Campos
+                            }
+                        }
+
+                        function checkInputsSegunda() {
+                            var hrEntSeg = document.getElementById('HrEntSeg').value;
+                            var hrSaiSeg = document.getElementById('HrSaiSeg').value;
+
+                            if (hrEntSeg && hrSaiSeg) {
+                                if (hrEntSeg > hrSaiSeg) {
+                                    alert('ALERTA! A hora de entrada não pode ser Menor que a hora de saída.');
+                                    document.getElementById('HrSaiSeg').value = '';
+                                } else {
+                                    alert('ALERTA! De Segunda-feira entrada Permitida das ' + hrEntSeg + ' às ' + hrSaiSeg + ' Horas.');
+                                }
+                            }
+                        }
+
+                        function toggleScriptVisibilitySegunda() {
+                            var checkbox = document.getElementById('checkSegunda');
+                            var button = document.getElementById('toggleButtonSegunda');
+
+                            if (checkbox.checked) {
+                                button.style.display = 'block';
+                            } else {
+                                button.style.display = 'none';
+                                document.getElementById('codigoPreenchidoSegunda').style.display = 'none';
+                                button.innerText = 'Exibir';
+                                document.getElementById('clearButtonSegunda').style.display = 'none'; // Oculta o botão Limpar Campos
+                                document.getElementById('cancelarButtonSegunda').style.display = 'none'; // Oculta o botão Limpar Campos
+                            }
+                        }
+
+                        function clearFieldsSegunda() {
+                            document.getElementById('HrEntSeg').value = '';
+                            document.getElementById('HrSaiSeg').value = '';
+                        }
+
+                        function cancelarFieldsSegunda() {
+                            document.getElementById('HrEntSeg').value = '';
+                            document.getElementById('HrSaiSeg').value = '';
+                        }
+                    </script>
+
+                    <a class="btn btn-primary" id="clearButtonSegunda" onclick="clearFieldsSegunda()" style="display:none;">Limpar Campos</a>
+                    <a class="btn btn-primary" id="cancelarButtonSegunda" onclick="cancelarFieldsSegunda()" style="display:none;">Cancelar</a>
+
+
+
+
+
+
+
+
+
+
+
+
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" id="checkTerca" asp-for="Terca" onchange="toggleScriptVisibility()" /> @Html.DisplayNameFor(model => model.Terca)
+                        </label>
+                    </div>
+
+                    <a class="btn btn-primary" id="toggleButton" onclick="toggleVisibility()" style="display:none;">Exibir</a>
+                    @*             <a class="btn btn-primary" id="clearButton" onclick="clearFields()" style="display:none;">Limpar Campos</a>
+                    <a class="btn btn-primary" id="cancelarButton" onclick="cancelarFields()" style="display:none;">Cancelar</a> *@
+
+                    <div id="codigoPreenchido" style="display:none;">
+                        <div class="form-group form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" id="HrEntTer" asp-for="HrEntTer" type="time" step="300" style="background-color: #f0f0f0; color: #333; border: 1px solid #ccc; border-radius: 5px; padding: 8px; width: 150px;" onchange="checkInputs()" /> @Html.DisplayNameFor(model => model.HrEntTer)
+                            </label>
+                        </div>
+
+                        <div class="form-group form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" id="HrSaiTer" asp-for="HrSaiTer" type="time" step="300" style="background-color: #f0f0f0; color: #333; border: 1px solid #ccc; border-radius: 5px; padding: 8px; width: 150px;" onchange="checkInputs()" /> @Html.DisplayNameFor(model => model.HrSaiTer)
+                            </label>
+                        </div>
+                    </div>
+
+                    <script>
+                        function toggleVisibility() {
+                            var element = document.getElementById('codigoPreenchido');
+                            var button = document.getElementById('toggleButton');
+
+                            if (element.style.display === 'none') {
+                                element.style.display = 'block';
+                                button.innerText = 'Ocultar';
+                                document.getElementById('clearButton').style.display = 'block'; // Mostra o botão Limpar Campos
+                                document.getElementById('cancelarButton').style.display = 'block'; // Mostra o botão Limpar Campos
+                            } else {
+                                element.style.display = 'none';
+                                button.innerText = 'Exibir';
+                                document.getElementById('clearButton').style.display = 'none'; // Oculta o botão Limpar Campos
+                                document.getElementById('cancelarButton').style.display = 'none'; // Oculta o botão Limpar Campos
+                            }
+                        }
+
+                        function checkInputs() {
+                            var hrEntTer = document.getElementById('HrEntTer').value;
+                            var hrSaiTer = document.getElementById('HrSaiTer').value;
+
+                            if (hrEntTer && hrSaiTer) {
+                                if (hrEntTer > hrSaiTer) {
+                                    alert('ALERTA! A hora de entrada não pode ser Menor que a hora de saída.');
+                                    document.getElementById('HrSaiTer').value = '';
+                                } else {
+                                    alert('ALERTA! De Terça-feira entrada Permitida das ' + hrEntTer + ' às ' + hrSaiTer + ' Horas.');
+                                }
+                            }
+                        }
+
+                        function toggleScriptVisibility() {
+                            var checkbox = document.getElementById('checkTerca');
+                            var button = document.getElementById('toggleButton');
+
+                            if (checkbox.checked) {
+                                button.style.display = 'block';
+                            } else {
+                                button.style.display = 'none';
+                                document.getElementById('codigoPreenchido').style.display = 'none';
+                                button.innerText = 'Exibir';
+                                document.getElementById('clearButton').style.display = 'none'; // Oculta o botão Limpar Campos
+                                document.getElementById('cancelarButton').style.display = 'none'; // Oculta o botão Limpar Campos
+                            }
+                        }
+
+                        function clearFields() {
+                            document.getElementById('HrEntTer').value = '';
+                            document.getElementById('HrSaiTer').value = '';
+                        }
+
+                        function cancelarFields() {
+                            document.getElementById('HrEntTer').value = '';
+                            document.getElementById('HrSaiTer').value = '';
+                        }
+                    </script>
+
+                    <a class="btn btn-primary" id="clearButton" onclick="clearFields()" style="display:none;">Limpar Campos</a>
+                    <a class="btn btn-primary" id="cancelarButton" onclick="cancelarFields()" style="display:none;">Cancelar</a>
+
+
+
+
+
+
+
+
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" id="checkQuarta" asp-for="Quarta" onchange="toggleScriptVisibilityQuarta()" /> @Html.DisplayNameFor(model => model.Quarta)
+                        </label>
+                    </div>
+
+                    <a class="btn btn-primary" id="toggleButtonQuarta" onclick="toggleVisibilityQuarta()" style="display:none;">Exibir</a>
+
+                    <div id="codigoPreenchidoQuarta" style="display:none;">
+                        <div class="form-group form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" id="HrEntQua" asp-for="HrEntQua" type="time" step="300" style="background-color: #f0f0f0; color: #333; border: 1px solid #ccc; border-radius: 5px; padding: 8px; width: 150px;" onchange="checkInputsQuarta()" /> @Html.DisplayNameFor(model => model.HrEntQua)
+                            </label>
+                        </div>
+
+                        <div class="form-group form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" id="HrSaiQua" asp-for="HrSaiQua" type="time" step="300" style="background-color: #f0f0f0; color: #333; border: 1px solid #ccc; border-radius: 5px; padding: 8px; width: 150px;" onchange="checkInputsQuarta()" /> @Html.DisplayNameFor(model => model.HrSaiQua)
+                            </label>
+                        </div>
+                    </div>
+
+                    <script>
+                        function toggleVisibilityQuarta() {
+                            var element = document.getElementById('codigoPreenchidoQuarta');
+                            var button = document.getElementById('toggleButtonQuarta');
+
+                            if (element.style.display === 'none') {
+                                element.style.display = 'block';
+                                button.innerText = 'Ocultar';
+                                document.getElementById('clearButtonQuarta').style.display = 'block'; // Mostra o botão Limpar Campos
+                                document.getElementById('cancelarButtonQuarta').style.display = 'block'; // Mostra o botão Limpar Campos
+                            } else {
+                                element.style.display = 'none';
+                                button.innerText = 'Exibir';
+                                document.getElementById('clearButtonQuarta').style.display = 'none'; // Oculta o botão Limpar Campos
+                                document.getElementById('cancelarButtonQuarta').style.display = 'none'; // Oculta o botão Limpar Campos
+                            }
+                        }
+
+                        function checkInputsQuarta() {
+                            var hrEntQua = document.getElementById('HrEntQua').value;
+                            var hrSaiQua = document.getElementById('HrSaiQua').value;
+
+                            if (hrEntQua && hrSaiQua) {
+                                if (hrEntQua > hrSaiQua) {
+                                    alert('ALERTA! A hora de entrada não pode ser Menor que a hora de saída.');
+                                    document.getElementById('HrSaiQua').value = '';
+                                } else {
+                                    alert('ALERTA! De Quarta-feira entrada Permitida das ' + hrEntQua + ' às ' + hrSaiQua + ' Horas.');
+                                }
+                            }
+                        }
+
+                        function toggleScriptVisibilityQuarta() {
+                            var checkbox = document.getElementById('checkQuarta');
+                            var button = document.getElementById('toggleButtonQuarta');
+
+                            if (checkbox.checked) {
+                                button.style.display = 'block';
+                            } else {
+                                button.style.display = 'none';
+                                document.getElementById('codigoPreenchidoQuarta').style.display = 'none';
+                                button.innerText = 'Exibir';
+                                document.getElementById('clearButtonQuarta').style.display = 'none'; // Oculta o botão Limpar Campos
+                                document.getElementById('cancelarButtonQuarta').style.display = 'none'; // Oculta o botão Limpar Campos
+                            }
+                        }
+
+                        function clearFieldsQuarta() {
+                            document.getElementById('HrEntQua').value = '';
+                            document.getElementById('HrSaiQua').value = '';
+                        }
+
+                        function cancelarFieldsQuarta() {
+                            document.getElementById('HrEntQua').value = '';
+                            document.getElementById('HrSaiQua').value = '';
+                        }
+                    </script>
+
+                    <a class="btn btn-primary" id="clearButtonQuarta" onclick="clearFieldsQuarta()" style="display:none;">Limpar Campos</a>
+                    <a class="btn btn-primary" id="cancelarButtonQuarta" onclick="cancelarFieldsQuarta()" style="display:none;">Cancelar</a>
+
+
+
+
+
+
+
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" id="checkQuinta" asp-for="Quinta" onchange="toggleScriptVisibilityQuinta()" /> @Html.DisplayNameFor(model => model.Quinta)
+                        </label>
+                    </div>
+
+                    <a class="btn btn-primary" id="toggleButtonQuinta" onclick="toggleVisibilityQuinta()" style="display:none;">Exibir</a>
+
+                    <div id="codigoPreenchidoQuinta" style="display:none;">
+                        <div class="form-group form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" id="HrEntQui" asp-for="HrEntQui" type="time" step="300" style="background-color: #f0f0f0; color: #333; border: 1px solid #ccc; border-radius: 5px; padding: 8px; width: 150px;" onchange="checkInputsQuinta()" /> @Html.DisplayNameFor(model => model.HrEntQui)
+                            </label>
+                        </div>
+
+                        <div class="form-group form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" id="HrSaiQui" asp-for="HrSaiQui" type="time" step="300" style="background-color: #f0f0f0; color: #333; border: 1px solid #ccc; border-radius: 5px; padding: 8px; width: 150px;" onchange="checkInputsQuinta()" /> @Html.DisplayNameFor(model => model.HrSaiQui)
+                            </label>
+                        </div>
+                    </div>
+
+                    <script>
+                        function toggleVisibilityQuinta() {
+                            var element = document.getElementById('codigoPreenchidoQuinta');
+                            var button = document.getElementById('toggleButtonQuinta');
+
+                            if (element.style.display === 'none') {
+                                element.style.display = 'block';
+                                button.innerText = 'Ocultar';
+                                document.getElementById('clearButtonQuinta').style.display = 'block'; // Mostra o botão Limpar Campos
+                                document.getElementById('cancelarButtonQuinta').style.display = 'block'; // Mostra o botão Limpar Campos
+                            } else {
+                                element.style.display = 'none';
+                                button.innerText = 'Exibir';
+                                document.getElementById('clearButtonQuinta').style.display = 'none'; // Oculta o botão Limpar Campos
+                                document.getElementById('cancelarButtonQuinta').style.display = 'none'; // Oculta o botão Limpar Campos
+                            }
+                        }
+
+                        function checkInputsQuinta() {
+                            var hrEntQui = document.getElementById('HrEntQui').value;
+                            var hrSaiQui = document.getElementById('HrSaiQui').value;
+
+                            if (hrEntQui && hrSaiQui) {
+                                if (hrEntQui > hrSaiQui) {
+                                    alert('ALERTA! A hora de entrada não pode ser Menor que a hora de saída.');
+                                    document.getElementById('HrSaiQui').value = '';
+                                } else {
+                                    alert('ALERTA! De Quinta-feira entrada Permitida das ' + hrEntQui + ' às ' + hrSaiQui + ' Horas.');
+                                }
+                            }
+                        }
+
+                        function toggleScriptVisibilityQuinta() {
+                            var checkbox = document.getElementById('checkQuinta');
+                            var button = document.getElementById('toggleButtonQuinta');
+
+                            if (checkbox.checked) {
+                                button.style.display = 'block';
+                            } else {
+                                button.style.display = 'none';
+                                document.getElementById('codigoPreenchidoQuinta').style.display = 'none';
+                                button.innerText = 'Exibir';
+                                document.getElementById('clearButtonQuinta').style.display = 'none'; // Oculta o botão Limpar Campos
+                                document.getElementById('cancelarButtonQuinta').style.display = 'none'; // Oculta o botão Limpar Campos
+                            }
+                        }
+
+                        function clearFieldsQuinta() {
+                            document.getElementById('HrEntQui').value = '';
+                            document.getElementById('HrSaiQui').value = '';
+                        }
+
+                        function cancelarFieldsQuinta() {
+                            document.getElementById('HrEntQui').value = '';
+                            document.getElementById('HrSaiQui').value = '';
+                        }
+                    </script>
+
+                    <a class="btn btn-primary" id="clearButtonQuinta" onclick="clearFieldsQuinta()" style="display:none;">Limpar Campos</a>
+                    <a class="btn btn-primary" id="cancelarButtonQuinta" onclick="cancelarFieldsQuinta()" style="display:none;">Cancelar</a>
+
+
+
+
+
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" id="checkSexta" asp-for="Sexta" onchange="toggleScriptVisibilitySexta()" /> @Html.DisplayNameFor(model => model.Sexta)
+                        </label>
+                    </div>
+
+                    <a class="btn btn-primary" id="toggleButtonSexta" onclick="toggleVisibilitySexta()" style="display:none;">Exibir</a>
+
+                    <div id="codigoPreenchidoSexta" style="display:none;">
+                        <div class="form-group form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" id="HrEntSex" asp-for="HrEntSex" type="time" step="300" style="background-color: #f0f0f0; color: #333; border: 1px solid #ccc; border-radius: 5px; padding: 8px; width: 150px;" onchange="checkInputsSexta()" /> @Html.DisplayNameFor(model => model.HrEntSex)
+                            </label>
+                        </div>
+
+                        <div class="form-group form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" id="HrSaiSex" asp-for="HrSaiSex" type="time" step="300" style="background-color: #f0f0f0; color: #333; border: 1px solid #ccc; border-radius: 5px; padding: 8px; width: 150px;" onchange="checkInputsSexta()" /> @Html.DisplayNameFor(model => model.HrSaiSex)
+                            </label>
+                        </div>
+                    </div>
+
+                    <script>
+                        function toggleVisibilitySexta() {
+                            var element = document.getElementById('codigoPreenchidoSexta');
+                            var button = document.getElementById('toggleButtonSexta');
+
+                            if (element.style.display === 'none') {
+                                element.style.display = 'block';
+                                button.innerText = 'Ocultar';
+                                document.getElementById('clearButtonSexta').style.display = 'block'; // Mostra o botão Limpar Campos
+                                document.getElementById('cancelarButtonSexta').style.display = 'block'; // Mostra o botão Limpar Campos
+                            } else {
+                                element.style.display = 'none';
+                                button.innerText = 'Exibir';
+                                document.getElementById('clearButtonSexta').style.display = 'none'; // Oculta o botão Limpar Campos
+                                document.getElementById('cancelarButtonSexta').style.display = 'none'; // Oculta o botão Limpar Campos
+                            }
+                        }
+
+                        function checkInputsSexta() {
+                            var hrEntSex = document.getElementById('HrEntSex').value;
+                            var hrSaiSex = document.getElementById('HrSaiSex').value;
+
+                            if (hrEntSex && hrSaiSex) {
+                                if (hrEntSex > hrSaiSex) {
+                                    alert('ALERTA! A hora de entrada não pode ser Menor que a hora de saída.');
+                                    document.getElementById('HrSaiSex').value = '';
+                                } else {
+                                    alert('ALERTA! De Sexta-feira entrada Permitida das ' + hrEntSex + ' às ' + hrSaiSex + ' Horas.');
+                                }
+                            }
+                        }
+
+                        function toggleScriptVisibilitySexta() {
+                            var checkbox = document.getElementById('checkSexta');
+                            var button = document.getElementById('toggleButtonSexta');
+
+                            if (checkbox.checked) {
+                                button.style.display = 'block';
+                            } else {
+                                button.style.display = 'none';
+                                document.getElementById('codigoPreenchidoSexta').style.display = 'none';
+                                button.innerText = 'Exibir';
+                                document.getElementById('clearButtonSexta').style.display = 'none'; // Oculta o botão Limpar Campos
+                                document.getElementById('cancelarButtonSexta').style.display = 'none'; // Oculta o botão Limpar Campos
+                            }
+                        }
+
+                        function clearFieldsSexta() {
+                            document.getElementById('HrEntSex').value = '';
+                            document.getElementById('HrSaiSex').value = '';
+                        }
+
+                        function cancelarFieldsSexta() {
+                            document.getElementById('HrEntSex').value = '';
+                            document.getElementById('HrSaiSex').value = '';
+                        }
+                    </script>
+
+                    <a class="btn btn-primary" id="clearButtonSexta" onclick="clearFieldsSexta()" style="display:none;">Limpar Campos</a>
+                    <a class="btn btn-primary" id="cancelarButtonSexta" onclick="cancelarFieldsSexta()" style="display:none;">Cancelar</a>
+
+
+
+
+
+
+
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" id="checkSabado" asp-for="Sabado" onchange="toggleScriptVisibilitySabado()" /> @Html.DisplayNameFor(model => model.Sabado)
+                        </label>
+                    </div>
+
+                    <a class="btn btn-primary" id="toggleButtonSabado" onclick="toggleVisibilitySabado()" style="display:none;">Exibir</a>
+
+                    <div id="codigoPreenchidoSabado" style="display:none;">
+                        <div class="form-group form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" id="HrEntSab" asp-for="HrEntSab" type="time" step="300" style="background-color: #f0f0f0; color: #333; border: 1px solid #ccc; border-radius: 5px; padding: 8px; width: 150px;" onchange="checkInputsSabado()" /> @Html.DisplayNameFor(model => model.HrEntSab)
+                            </label>
+                        </div>
+
+                        <div class="form-group form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" id="HrSaiSab" asp-for="HrSaiSab" type="time" step="300" style="background-color: #f0f0f0; color: #333; border: 1px solid #ccc; border-radius: 5px; padding: 8px; width: 150px;" onchange="checkInputsSabado()" /> @Html.DisplayNameFor(model => model.HrSaiSab)
+                            </label>
+                        </div>
+                    </div>
+
+                    <script>
+                        function toggleVisibilitySabado() {
+                            var element = document.getElementById('codigoPreenchidoSabado');
+                            var button = document.getElementById('toggleButtonSabado');
+
+                            if (element.style.display === 'none') {
+                                element.style.display = 'block';
+                                button.innerText = 'Ocultar';
+                                document.getElementById('clearButtonSabado').style.display = 'block'; // Mostra o botão Limpar Campos
+                                document.getElementById('cancelarButtonSabado').style.display = 'block'; // Mostra o botão Limpar Campos
+                            } else {
+                                element.style.display = 'none';
+                                button.innerText = 'Exibir';
+                                document.getElementById('clearButtonSabado').style.display = 'none'; // Oculta o botão Limpar Campos
+                                document.getElementById('cancelarButtonSabado').style.display = 'none'; // Oculta o botão Limpar Campos
+                            }
+                        }
+
+                        function checkInputsSabado() {
+                            var hrEntSab = document.getElementById('HrEntSab').value;
+                            var hrSaiSab = document.getElementById('HrSaiSab').value;
+
+                            if (hrEntSab && hrSaiSab) {
+                                if (hrEntSab > hrSaiSab) {
+                                    alert('ALERTA! A hora de entrada não pode ser Menor que a hora de saída.');
+                                    document.getElementById('HrSaiSab').value = '';
+                                } else {
+                                    alert('ALERTA! De Sabado-feira entrada Permitida das ' + hrEntSab + ' às ' + hrSaiSab + ' Horas.');
+                                }
+                            }
+                        }
+
+                        function toggleScriptVisibilitySabado() {
+                            var checkbox = document.getElementById('checkSabado');
+                            var button = document.getElementById('toggleButtonSabado');
+
+                            if (checkbox.checked) {
+                                button.style.display = 'block';
+                            } else {
+                                button.style.display = 'none';
+                                document.getElementById('codigoPreenchidoSabado').style.display = 'none';
+                                button.innerText = 'Exibir';
+                                document.getElementById('clearButtonSabado').style.display = 'none'; // Oculta o botão Limpar Campos
+                                document.getElementById('cancelarButtonSabado').style.display = 'none'; // Oculta o botão Limpar Campos
+                            }
+                        }
+
+                        function clearFieldsSabado() {
+                            document.getElementById('HrEntSab').value = '';
+                            document.getElementById('HrSaiSab').value = '';
+                        }
+
+                        function cancelarFieldsSabado() {
+                            document.getElementById('HrEntSab').value = '';
+                            document.getElementById('HrSaiSab').value = '';
+                        }
+                    </script>
+
+                    <a class="btn btn-primary" id="clearButtonSabado" onclick="clearFieldsSabado()" style="display:none;">Limpar Campos</a>
+                    <a class="btn btn-primary" id="cancelarButtonSabado" onclick="cancelarFieldsSabado()" style="display:none;">Cancelar</a>
+
+
+
+
+
+
+
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" id="checkDomingo" asp-for="Domingo" onchange="toggleScriptVisibilityDomingo()" /> @Html.DisplayNameFor(model => model.Domingo)
+                        </label>
+                    </div>
+
+                    <a class="btn btn-primary" id="toggleButtonDomingo" onclick="toggleVisibilityDomingo()" style="display:none;">Exibir</a>
+
+                    <div id="codigoPreenchidoDomingo" style="display:none;">
+                        <div class="form-group form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" id="HrEntDom" asp-for="HrEntDom" type="time" step="300" style="background-color: #f0f0f0; color: #333; border: 1px solid #ccc; border-radius: 5px; padding: 8px; width: 150px;" onchange="checkInputsDomingo()" /> @Html.DisplayNameFor(model => model.HrEntDom)
+                            </label>
+                        </div>
+
+                        <div class="form-group form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" id="HrSaiDom" asp-for="HrSaiDom" type="time" step="300" style="background-color: #f0f0f0; color: #333; border: 1px solid #ccc; border-radius: 5px; padding: 8px; width: 150px;" onchange="checkInputsDomingo()" /> @Html.DisplayNameFor(model => model.HrSaiDom)
+                            </label>
+                        </div>
+                    </div>
+
+                    <script>
+                        function toggleVisibilityDomingo() {
+                            var element = document.getElementById('codigoPreenchidoDomingo');
+                            var button = document.getElementById('toggleButtonDomingo');
+
+                            if (element.style.display === 'none') {
+                                element.style.display = 'block';
+                                button.innerText = 'Ocultar';
+                                document.getElementById('clearButtonDomingo').style.display = 'block'; // Mostra o botão Limpar Campos
+                                document.getElementById('cancelarButtonDomingo').style.display = 'block'; // Mostra o botão Limpar Campos
+                            } else {
+                                element.style.display = 'none';
+                                button.innerText = 'Exibir';
+                                document.getElementById('clearButtonDomingo').style.display = 'none'; // Oculta o botão Limpar Campos
+                                document.getElementById('cancelarButtonDomingo').style.display = 'none'; // Oculta o botão Limpar Campos
+                            }
+                        }
+
+                        function checkInputsDomingo() {
+                            var hrEntDom = document.getElementById('HrEntDom').value;
+                            var hrSaiDom = document.getElementById('HrSaiDom').value;
+
+                            if (hrEntDom && hrSaiDom) {
+                                if (hrEntDom > hrSaiDom) {
+                                    alert('ALERTA! A hora de entrada não pode ser Menor que a hora de saída.');
+                                    document.getElementById('HrSaiDom').value = '';
+                                } else {
+                                    alert('ALERTA! De Domingo-feira entrada Permitida das ' + hrEntDom + ' às ' + hrSaiDom + ' Horas.');
+                                }
+                            }
+                        }
+
+                        function toggleScriptVisibilityDomingo() {
+                            var checkbox = document.getElementById('checkDomingo');
+                            var button = document.getElementById('toggleButtonDomingo');
+
+                            if (checkbox.checked) {
+                                button.style.display = 'block';
+                            } else {
+                                button.style.display = 'none';
+                                document.getElementById('codigoPreenchidoDomingo').style.display = 'none';
+                                button.innerText = 'Exibir';
+                                document.getElementById('clearButtonDomingo').style.display = 'none'; // Oculta o botão Limpar Campos
+                                document.getElementById('cancelarButtonDomingo').style.display = 'none'; // Oculta o botão Limpar Campos
+                            }
+                        }
+
+                        function clearFieldsDomingo() {
+                            document.getElementById('HrEntDom').value = '';
+                            document.getElementById('HrSaiDom').value = '';
+                        }
+
+                        function cancelarFieldsDomingo() {
+                            document.getElementById('HrEntDom').value = '';
+                            document.getElementById('HrSaiDom').value = '';
+                        }
+                    </script>
+
+                    <a class="btn btn-primary" id="clearButtonDomingo" onclick="clearFieldsDomingo()" style="display:none;">Limpar Campos</a>
+                    <a class="btn btn-primary" id="cancelarButtonDomingo" onclick="cancelarFieldsDomingo()" style="display:none;">Cancelar</a>
+
+
+
+
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input id="Todos_os_Dias" class="form-check-input" asp-for="Todos_os_Dias" /> @Html.DisplayNameFor(model => model.Todos_os_Dias)
+                        </label>
+                    </div>
+
+                    <script>
+                        document.getElementById('Todos_os_Dias').addEventListener('click', function () {
+                            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
                             var isChecked = this.checked;
                             checkboxes.forEach(function (checkbox) {
                                 checkbox.checked = isChecked;
                             });
                         });
+
+                        var todosOsDias = document.getElementById('Todos_os_Dias');
+                        var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+                        checkboxes.forEach(function (checkbox) {
+                            checkbox.addEventListener('click', function () {
+                                if (todosOsDias.checked && this !== todosOsDias) {
+                                    todosOsDias.checked = false;
+                                }
+                            });
+                        });
+
+                        document.getElementById('Todos_os_Dias').addEventListener('click', function () {
+                            var exibirButton = document.getElementById('toggleButton');
+                            var camposTerca = document.getElementById('codigoPreenchido');
+                            var limparCamposButton = document.getElementById('clearButton');
+                            var cancelarCamposButton = document.getElementById('cancelarButton');
+
+                            if (this.checked) {
+                                exibirButton.style.display = 'inline-block'; // Mostra o botão Exibir
+                                camposTerca.style.display = 'none'; // Oculta os campos relacionados à terça-feira
+                                limparCamposButton.style.display = 'none'; // Oculta o botão Limpar Campos
+                                cancelarCamposButton.style.display = 'none'; // Oculta o botão Cancelar Campos
+                            } else {
+                                exibirButton.style.display = 'none'; // Oculta o botão Exibir
+                                camposTerca.style.display = 'none'; // Garante que os campos relacionados à terça-feira permaneçam ocultos
+                                limparCamposButton.style.display = 'none'; // Garante que o botão Limpar Campos permaneça oculto
+                                cancelarCamposButton.style.display = 'none'; // Garante que o botão Cancelar permaneça oculto
+                            }
+                        });
+
+                        // Adicione essa parte para garantir que os campos relacionados à terça-feira permaneçam ocultos inicialmente
+                        document.addEventListener('DOMContentLoaded', function () {
+                            var camposTerca = document.getElementById('codigoPreenchido');
+                            var limparCamposButton = document.getElementById('clearButton');
+                            var cancelarCamposButton = document.getElementById('cancelarButton');
+
+                            camposTerca.style.display = 'none';
+                            limparCamposButton.style.display = 'none';
+                            cancelarCamposButton.style.display = 'none';
+                        });
+
+                        function cancelarFields() {
+                            var camposTerca = document.getElementById('codigoPreenchido');
+                            var limparCamposButton = document.getElementById('clearButton');
+                            var cancelarCamposButton = document.getElementById('cancelarButton');
+                            var exibirButton = document.getElementById('toggleButton');
+
+                            // Limpa os campos HrEntTer e HrSaiTer
+                            document.getElementById('HrEntTer').value = '';
+                            document.getElementById('HrSaiTer').value = '';
+
+                            camposTerca.style.display = 'none'; // Oculta os campos relacionados à terça-feira
+                            limparCamposButton.style.display = 'none'; // Oculta o botão Limpar Campos
+                            cancelarCamposButton.style.display = 'none'; // Oculta o botão Cancelar Campos
+                            exibirButton.style.display = 'inline-block'; // Mostra o botão Exibir
+                            // Adicione a linha abaixo para ocultar o botão Ocultar
+                            document.getElementById('toggleButton').innerText = 'Exibir';
+                        }
                     </script>
 
- *@
+
+
+
+
+
+
+
+
+                    <script>
+                        document.getElementById('Todos_os_Dias').addEventListener('click', function () {
+                            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+                            var isChecked = this.checked;
+                            checkboxes.forEach(function (checkbox) {
+                                checkbox.checked = isChecked;
+                            });
+                        });
+
+                        document.getElementById('Todos_os_Dias').addEventListener('click', function () {
+                            var todosOsDias = document.getElementById('Todos_os_Dias');
+                            var exibirButton = document.getElementById('toggleButtonSegunda');
+                            var camposSegunda = document.getElementById('codigoPreenchidoSegunda');
+                            var limparCamposButton = document.getElementById('clearButtonSegunda');
+                            var cancelarCamposButton = document.getElementById('cancelarButtonSegunda');
+
+                            if (this.checked) {
+                                exibirButton.style.display = 'inline-block'; // Mostra o botão Exibir
+                                camposSegunda.style.display = 'none'; // Oculta os campos relacionados à Segunda-feira
+                                limparCamposButton.style.display = 'none'; // Oculta o botão Limpar Campos
+                                cancelarCamposButton.style.display = 'none'; // Oculta o botão Cancelar Campos
+                            } else {
+                                exibirButton.style.display = 'none'; // Oculta o botão Exibir
+                                camposSegunda.style.display = 'none'; // Garante que os campos relacionados à Segunda-feira permaneçam ocultos
+                                limparCamposButton.style.display = 'none'; // Garante que o botão Limpar Campos permaneça oculto
+                                cancelarCamposButton.style.display = 'none'; // Garante que o botão Cancelar permaneça oculto
+                            }
+                        });
+
+                        // Adicione essa parte para garantir que os campos relacionados à Segunda-feira permaneçam ocultos inicialmente
+                        document.addEventListener('DOMContentLoaded', function () {
+                            var camposSegunda = document.getElementById('codigoPreenchidoSegunda');
+                            var limparCamposButton = document.getElementById('clearButtonSegunda');
+                            var cancelarCamposButton = document.getElementById('cancelarButtonSegunda');
+
+                            camposSegunda.style.display = 'none';
+                            limparCamposButton.style.display = 'none';
+                            cancelarCamposButton.style.display = 'none';
+                        });
+
+                        function clearFieldsSegunda() {
+                            document.getElementById('HrEntSeg').value = '';
+                            document.getElementById('HrSaiSeg').value = '';
+                        }
+
+                        function cancelarFieldsSegunda() {
+                            document.getElementById('HrEntSeg').value = '';
+                            document.getElementById('HrSaiSeg').value = '';
+
+                            var camposSegunda = document.getElementById('codigoPreenchidoSegunda');
+                            var limparCamposButton = document.getElementById('clearButtonSegunda');
+                            var cancelarCamposButton = document.getElementById('cancelarButtonSegunda');
+                            var exibirButton = document.getElementById('toggleButtonSegunda');
+
+                            camposSegunda.style.display = 'none';
+                            limparCamposButton.style.display = 'none';
+                            cancelarCamposButton.style.display = 'none';
+                            exibirButton.style.display = 'inline-block'; // Mostra o botão "Exibir"
+                            document.getElementById('toggleButtonSegunda').innerText = 'Exibir'; // Atualiza o texto do botão "Exibir"
+                        }
+
+                    </script>
+
+
+
+
+
+
+
+
+                    <script>
+                        document.getElementById('Todos_os_Dias').addEventListener('click', function () {
+                            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+                            var isChecked = this.checked;
+                            checkboxes.forEach(function (checkbox) {
+                                checkbox.checked = isChecked;
+                            });
+                        });
+
+                        document.getElementById('Todos_os_Dias').addEventListener('click', function () {
+                            var todosOsDias = document.getElementById('Todos_os_Dias');
+                            var exibirButton = document.getElementById('toggleButtonQuarta');
+                            var camposQuarta = document.getElementById('codigoPreenchidoQuarta');
+                            var limparCamposButton = document.getElementById('clearButtonQuarta');
+                            var cancelarCamposButton = document.getElementById('cancelarButtonQuarta');
+
+                            if (this.checked) {
+                                exibirButton.style.display = 'inline-block'; // Mostra o botão Exibir
+                                camposQuarta.style.display = 'none'; // Oculta os campos relacionados à Quarta-feira
+                                limparCamposButton.style.display = 'none'; // Oculta o botão Limpar Campos
+                                cancelarCamposButton.style.display = 'none'; // Oculta o botão Cancelar Campos
+                            } else {
+                                exibirButton.style.display = 'none'; // Oculta o botão Exibir
+                                camposQuarta.style.display = 'none'; // Garante que os campos relacionados à Quarta-feira permaneçam ocultos
+                                limparCamposButton.style.display = 'none'; // Garante que o botão Limpar Campos permaneça oculto
+                                cancelarCamposButton.style.display = 'none'; // Garante que o botão Cancelar permaneça oculto
+                            }
+                        });
+
+                        // Adicione essa parte para garantir que os campos relacionados à Quarta-feira permaneçam ocultos inicialmente
+                        document.addEventListener('DOMContentLoaded', function () {
+                            var camposQuarta = document.getElementById('codigoPreenchidoQuarta');
+                            var limparCamposButton = document.getElementById('clearButtonQuarta');
+                            var cancelarCamposButton = document.getElementById('cancelarButtonQuarta');
+
+                            camposQuarta.style.display = 'none';
+                            limparCamposButton.style.display = 'none';
+                            cancelarCamposButton.style.display = 'none';
+                        });
+
+                        function clearFieldsQuarta() {
+                            document.getElementById('HrEntQua').value = '';
+                            document.getElementById('HrSaiQua').value = '';
+                        }
+
+                        function cancelarFieldsQuarta() {
+                            document.getElementById('HrEntQua').value = '';
+                            document.getElementById('HrSaiQua').value = '';
+
+                            var camposQuarta = document.getElementById('codigoPreenchidoQuarta');
+                            var limparCamposButton = document.getElementById('clearButtonQuarta');
+                            var cancelarCamposButton = document.getElementById('cancelarButtonQuarta');
+                            var exibirButton = document.getElementById('toggleButtonQuarta');
+
+                            camposQuarta.style.display = 'none';
+                            limparCamposButton.style.display = 'none';
+                            cancelarCamposButton.style.display = 'none';
+                            exibirButton.style.display = 'inline-block'; // Mostra o botão "Exibir"
+                            document.getElementById('toggleButtonQuarta').innerText = 'Exibir'; // Atualiza o texto do botão "Exibir"
+                        }
+                    </script>
+
+
+
+
+                    <script>
+                        document.getElementById('Todos_os_Dias').addEventListener('click', function () {
+                            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+                            var isChecked = this.checked;
+                            checkboxes.forEach(function (checkbox) {
+                                checkbox.checked = isChecked;
+                            });
+                        });
+
+                        document.getElementById('Todos_os_Dias').addEventListener('click', function () {
+                            var todosOsDias = document.getElementById('Todos_os_Dias');
+                            var exibirButton = document.getElementById('toggleButtonQuinta');
+                            var camposQuinta = document.getElementById('codigoPreenchidoQuinta');
+                            var limparCamposButton = document.getElementById('clearButtonQuinta');
+                            var cancelarCamposButton = document.getElementById('cancelarButtonQuinta');
+
+                            if (this.checked) {
+                                exibirButton.style.display = 'inline-block'; // Mostra o botão Exibir
+                                camposQuinta.style.display = 'none'; // Oculta os campos relacionados à Quinta-feira
+                                limparCamposButton.style.display = 'none'; // Oculta o botão Limpar Campos
+                                cancelarCamposButton.style.display = 'none'; // Oculta o botão Cancelar Campos
+                            } else {
+                                exibirButton.style.display = 'none'; // Oculta o botão Exibir
+                                camposQuinta.style.display = 'none'; // Garante que os campos relacionados à Quinta-feira permaneçam ocultos
+                                limparCamposButton.style.display = 'none'; // Garante que o botão Limpar Campos permaneça oculto
+                                cancelarCamposButton.style.display = 'none'; // Garante que o botão Cancelar permaneça oculto
+                            }
+                        });
+
+                        // Adicione essa parte para garantir que os campos relacionados à Quinta-feira permaneçam ocultos inicialmente
+                        document.addEventListener('DOMContentLoaded', function () {
+                            var camposQuinta = document.getElementById('codigoPreenchidoQuinta');
+                            var limparCamposButton = document.getElementById('clearButtonQuinta');
+                            var cancelarCamposButton = document.getElementById('cancelarButtonQuinta');
+
+                            camposQuinta.style.display = 'none';
+                            limparCamposButton.style.display = 'none';
+                            cancelarCamposButton.style.display = 'none';
+                        });
+
+                        function clearFieldsQuinta() {
+                            document.getElementById('HrEntQui').value = '';
+                            document.getElementById('HrSaiQui').value = '';
+                        }
+
+                        function cancelarFieldsQuinta() {
+                            document.getElementById('HrEntQui').value = '';
+                            document.getElementById('HrSaiQui').value = '';
+
+                            var camposQuinta = document.getElementById('codigoPreenchidoQuinta');
+                            var limparCamposButton = document.getElementById('clearButtonQuinta');
+                            var cancelarCamposButton = document.getElementById('cancelarButtonQuinta');
+                            var exibirButton = document.getElementById('toggleButtonQuinta');
+
+                            camposQuinta.style.display = 'none';
+                            limparCamposButton.style.display = 'none';
+                            cancelarCamposButton.style.display = 'none';
+                            exibirButton.style.display = 'inline-block'; // Mostra o botão "Exibir"
+                            document.getElementById('toggleButtonQuinta').innerText = 'Exibir'; // Atualiza o texto do botão "Exibir"
+                        }
+                    </script>
+
+
+
+
+                    <script>
+                        document.getElementById('Todos_os_Dias').addEventListener('click', function () {
+                            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+                            var isChecked = this.checked;
+                            checkboxes.forEach(function (checkbox) {
+                                checkbox.checked = isChecked;
+                            });
+                        });
+
+                        document.getElementById('Todos_os_Dias').addEventListener('click', function () {
+                            var todosOsDias = document.getElementById('Todos_os_Dias');
+                            var exibirButton = document.getElementById('toggleButtonSexta');
+                            var camposSexta = document.getElementById('codigoPreenchidoSexta');
+                            var limparCamposButton = document.getElementById('clearButtonSexta');
+                            var cancelarCamposButton = document.getElementById('cancelarButtonSexta');
+
+                            if (this.checked) {
+                                exibirButton.style.display = 'inline-block'; // Mostra o botão Exibir
+                                camposSexta.style.display = 'none'; // Oculta os campos relacionados à Sexta-feira
+                                limparCamposButton.style.display = 'none'; // Oculta o botão Limpar Campos
+                                cancelarCamposButton.style.display = 'none'; // Oculta o botão Cancelar Campos
+                            } else {
+                                exibirButton.style.display = 'none'; // Oculta o botão Exibir
+                                camposSexta.style.display = 'none'; // Garante que os campos relacionados à Sexta-feira permaneçam ocultos
+                                limparCamposButton.style.display = 'none'; // Garante que o botão Limpar Campos permaneça oculto
+                                cancelarCamposButton.style.display = 'none'; // Garante que o botão Cancelar permaneça oculto
+                            }
+                        });
+
+                        // Adicione essa parte para garantir que os campos relacionados à Sexta-feira permaneçam ocultos inicialmente
+                        document.addEventListener('DOMContentLoaded', function () {
+                            var camposSexta = document.getElementById('codigoPreenchidoSexta');
+                            var limparCamposButton = document.getElementById('clearButtonSexta');
+                            var cancelarCamposButton = document.getElementById('cancelarButtonSexta');
+
+                            camposSexta.style.display = 'none';
+                            limparCamposButton.style.display = 'none';
+                            cancelarCamposButton.style.display = 'none';
+                        });
+
+                        function clearFieldsSexta() {
+                            document.getElementById('HrEntSex').value = '';
+                            document.getElementById('HrSaiSex').value = '';
+                        }
+
+                        function cancelarFieldsSexta() {
+                            document.getElementById('HrEntSex').value = '';
+                            document.getElementById('HrSaiSex').value = '';
+
+                            var camposSexta = document.getElementById('codigoPreenchidoSexta');
+                            var limparCamposButton = document.getElementById('clearButtonSexta');
+                            var cancelarCamposButton = document.getElementById('cancelarButtonSexta');
+                            var exibirButton = document.getElementById('toggleButtonSexta');
+
+                            camposSexta.style.display = 'none';
+                            limparCamposButton.style.display = 'none';
+                            cancelarCamposButton.style.display = 'none';
+                            exibirButton.style.display = 'inline-block'; // Mostra o botão "Exibir"
+                            document.getElementById('toggleButtonSexta').innerText = 'Exibir'; // Atualiza o texto do botão "Exibir"
+                        }
+                    </script>
+
+
+
+
+
+
+
+                    <script>
+                        document.getElementById('Todos_os_Dias').addEventListener('click', function () {
+                            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+                            var isChecked = this.checked;
+                            checkboxes.forEach(function (checkbox) {
+                                checkbox.checked = isChecked;
+                            });
+                        });
+
+                        document.getElementById('Todos_os_Dias').addEventListener('click', function () {
+                            var todosOsDias = document.getElementById('Todos_os_Dias');
+                            var exibirButton = document.getElementById('toggleButtonSabado');
+                            var camposSabado = document.getElementById('codigoPreenchidoSabado');
+                            var limparCamposButton = document.getElementById('clearButtonSabado');
+                            var cancelarCamposButton = document.getElementById('cancelarButtonSabado');
+
+                            if (this.checked) {
+                                exibirButton.style.display = 'inline-block'; // Mostra o botão Exibir
+                                camposSabado.style.display = 'none'; // Oculta os campos relacionados à Sabado-feira
+                                limparCamposButton.style.display = 'none'; // Oculta o botão Limpar Campos
+                                cancelarCamposButton.style.display = 'none'; // Oculta o botão Cancelar Campos
+                            } else {
+                                exibirButton.style.display = 'none'; // Oculta o botão Exibir
+                                camposSabado.style.display = 'none'; // Garante que os campos relacionados à Sabado-feira permaneçam ocultos
+                                limparCamposButton.style.display = 'none'; // Garante que o botão Limpar Campos permaneça oculto
+                                cancelarCamposButton.style.display = 'none'; // Garante que o botão Cancelar permaneça oculto
+                            }
+                        });
+
+                        // Adicione essa parte para garantir que os campos relacionados à Sabado-feira permaneçam ocultos inicialmente
+                        document.addEventListener('DOMContentLoaded', function () {
+                            var camposSabado = document.getElementById('codigoPreenchidoSabado');
+                            var limparCamposButton = document.getElementById('clearButtonSabado');
+                            var cancelarCamposButton = document.getElementById('cancelarButtonSabado');
+
+                            camposSabado.style.display = 'none';
+                            limparCamposButton.style.display = 'none';
+                            cancelarCamposButton.style.display = 'none';
+                        });
+
+                        function clearFieldsSabado() {
+                            document.getElementById('HrEntSab').value = '';
+                            document.getElementById('HrSaiSab').value = '';
+                        }
+
+                        function cancelarFieldsSabado() {
+                            document.getElementById('HrEntSab').value = '';
+                            document.getElementById('HrSaiSab').value = '';
+
+                            var camposSabado = document.getElementById('codigoPreenchidoSabado');
+                            var limparCamposButton = document.getElementById('clearButtonSabado');
+                            var cancelarCamposButton = document.getElementById('cancelarButtonSabado');
+                            var exibirButton = document.getElementById('toggleButtonSabado');
+
+                            camposSabado.style.display = 'none';
+                            limparCamposButton.style.display = 'none';
+                            cancelarCamposButton.style.display = 'none';
+                            exibirButton.style.display = 'inline-block'; // Mostra o botão "Exibir"
+                            document.getElementById('toggleButtonSabado').innerText = 'Exibir'; // Atualiza o texto do botão "Exibir"
+                        }
+                    </script>
+
+
+
+
+
+
+
+                    <script>
+                        document.getElementById('Todos_os_Dias').addEventListener('click', function () {
+                            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+                            var isChecked = this.checked;
+                            checkboxes.forEach(function (checkbox) {
+                                checkbox.checked = isChecked;
+                            });
+                        });
+
+                        document.getElementById('Todos_os_Dias').addEventListener('click', function () {
+                            var todosOsDias = document.getElementById('Todos_os_Dias');
+                            var exibirButton = document.getElementById('toggleButtonDomingo');
+                            var camposDomingo = document.getElementById('codigoPreenchidoDomingo');
+                            var limparCamposButton = document.getElementById('clearButtonDomingo');
+                            var cancelarCamposButton = document.getElementById('cancelarButtonDomingo');
+
+                            if (this.checked) {
+                                exibirButton.style.display = 'inline-block'; // Mostra o botão Exibir
+                                camposDomingo.style.display = 'none'; // Oculta os campos relacionados à Domingo-feira
+                                limparCamposButton.style.display = 'none'; // Oculta o botão Limpar Campos
+                                cancelarCamposButton.style.display = 'none'; // Oculta o botão Cancelar Campos
+                            } else {
+                                exibirButton.style.display = 'none'; // Oculta o botão Exibir
+                                camposDomingo.style.display = 'none'; // Garante que os campos relacionados à Domingo-feira permaneçam ocultos
+                                limparCamposButton.style.display = 'none'; // Garante que o botão Limpar Campos permaneça oculto
+                                cancelarCamposButton.style.display = 'none'; // Garante que o botão Cancelar permaneça oculto
+                            }
+                        });
+
+                        // Adicione essa parte para garantir que os campos relacionados à Domingo-feira permaneçam ocultos inicialmente
+                        document.addEventListener('DOMContentLoaded', function () {
+                            var camposDomingo = document.getElementById('codigoPreenchidoDomingo');
+                            var limparCamposButton = document.getElementById('clearButtonDomingo');
+                            var cancelarCamposButton = document.getElementById('cancelarButtonDomingo');
+
+                            camposDomingo.style.display = 'none';
+                            limparCamposButton.style.display = 'none';
+                            cancelarCamposButton.style.display = 'none';
+                        });
+
+                        function clearFieldsDomingo() {
+                            document.getElementById('HrEntDom').value = '';
+                            document.getElementById('HrSaiDom').value = '';
+                        }
+
+                        function cancelarFieldsDomingo() {
+                            document.getElementById('HrEntDom').value = '';
+                            document.getElementById('HrSaiDom').value = '';
+
+                            var camposDomingo = document.getElementById('codigoPreenchidoDomingo');
+                            var limparCamposButton = document.getElementById('clearButtonDomingo');
+                            var cancelarCamposButton = document.getElementById('cancelarButtonDomingo');
+                            var exibirButton = document.getElementById('toggleButtonDomingo');
+
+                            camposDomingo.style.display = 'none';
+                            limparCamposButton.style.display = 'none';
+                            cancelarCamposButton.style.display = 'none';
+                            exibirButton.style.display = 'inline-block'; // Mostra o botão "Exibir"
+                            document.getElementById('toggleButtonDomingo').innerText = 'Exibir'; // Atualiza o texto do botão "Exibir"
+                        }
+                    </script>
+
 
 
             </div>
