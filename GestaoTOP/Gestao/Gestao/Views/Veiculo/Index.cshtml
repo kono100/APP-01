@@ -19,97 +19,90 @@
     <a class="btn btn-primary" asp-action="Create">Criar</a>
 </p>
 
-<table class="table table-hover" id="table-veiculos">
-    <thead class="text-center">
+<table class="table table-hover" id="table-search">
+    <thead>
         <tr>
-            <th>
+            <th class="text-center">
+                 N.º
+            </th>
+            <th class ="text-center">
                 @* @Html.DisplayNameFor(model => model.Nome) *@ Placa
             </th>
 
 
-            <th>
+            <th class="text-center">
                 @Html.DisplayNameFor(model => model.Marca)
             </th>
 
 
-            <th>
+            <th class="text-center">
                 @Html.DisplayNameFor(model => model.Modelo)
             </th>
 
 
-            <th>
+            <th class="text-center">
                 @Html.DisplayNameFor(model => model.Cor)
             </th>
 
 
-            <th>
+            <th class="text-center">
                 @Html.DisplayNameFor(model => model.Tag)
             </th>
 
-            <th>
-                @Html.DisplayNameFor(model => model.HrEntTer)
-            </th>
-
-            <th>
-                @Html.DisplayNameFor(model => model.HrSaiTer)
-            </th>
-
-@*             <th>
-                @Html.DisplayNameFor(model => model.HrSegunda)
-            </th> *@
 
 
-            <th>
+            <th class="text-center">
                 @Html.DisplayNameFor(model => model)Dias Permitidos
             </th>
 
 
 
 
-            <th>
+            <th class="text-center">
                 @Html.DisplayNameFor(model => model.Morador) Associado
             </th>
 
-            <th>
+            <th class="text-center">
                 Ações
             </th>
         </tr>
     </thead>
-    <tbody class="text-center">
+    <tbody>
+
+        @{
+            var contador = 0;
+        }
+
         @foreach (var item in Model)
         {
             <tr>
-                <td>
+
+                <td class="text-center">
+                    @(++contador)
+                </td>
+
+
+                <td class="text-center">
                     @Html.DisplayFor(modelItem => item.Placa)
                 </td>
 
 
-                <td>
+                <td class="text-center">
                     @Html.DisplayFor(modelItem => item.Marca)
                 </td>
 
 
-                <td>
+                <td class="text-center">
                     @Html.DisplayFor(modelItem => item.Modelo)
                 </td>
 
 
-                <td>
+                <td class="text-center">
                     @Html.DisplayFor(modelItem => item.Cor)
                 </td>
 
-                <td>
+                <td class="text-center">
                     @Html.DisplayFor(modelItem => item.Tag)
-                </td>
-
-
-                <td>
-                    @Html.DisplayFor(modelItem => item.HrEntTer)
-                </td>
-
-
-                <td>
-                    @Html.DisplayFor(modelItem => item.HrSaiTer)
                 </td>
 
 @*                 <td>
@@ -155,7 +148,7 @@
 
                 </td> *@
 
-                <td>
+                <td class="text-center">
                     @if (item.Todos_os_Dias == true)
                     {
                         <text>Todos Dias Permitido</text>
@@ -212,7 +205,7 @@
 
 
 
-                <td>
+                <td class="text-center">
                     @{
                         var fullNameMorador = item.Morador.Nome.Split(' ');
                         var firstNameMorador = fullNameMorador[0];
@@ -221,7 +214,7 @@
                     <p>@Html.DisplayFor(modelItem => firstNameMorador) @Html.Raw(" ") @Html.DisplayFor(modelItem => lastNameMorador)</p>
                 </td>
 
-                <td>
+                <td class="text-center">
                     <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.VeiculoID">Editar</a> |
                     <a class="btn btn-success" asp-action="Details" asp-route-id="@item.VeiculoID">Detalhes</a> |
                     <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.VeiculoID">Deletar</a>

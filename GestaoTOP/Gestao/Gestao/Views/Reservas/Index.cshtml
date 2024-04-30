@@ -15,63 +15,64 @@
 <p>
     <a class="btn btn-primary" asp-action="Create">Criar</a>
 </p>
-<table class="table table-hover">
-    <thead class="text-center">
+<table class="table table-hover" id="table-search">
+    <thead>
         <tr>
-            <th>
+            <th class ="text-center">
                 @*                 @Html.DisplayNameFor(model => model.Nome) *@ Espaço Reservado
             </th>
 
-@*             <th>
+@*             <th class ="text-center">
                 @Html.DisplayNameFor(model => model.DataHoraRes) Data Hora Res
             </th> *@
-            <th>
+            <th class="text-center">
                 Data da Reserva
             </th>
 
-@*             <th>
+@*             <th class ="text-center">
                 @Html.DisplayNameFor(model => model.DuracaoReserva)
             </th> *@
 
-            <th>
+            <th class="text-center">
                 Duração
             </th>
 
 
-            <th>
+            <th class="text-center">
                 @Html.DisplayNameFor(model => model.Status)
             </th>
-            <th>
+
+            <th class="text-center">
 
                 @Html.DisplayNameFor(model => model.Morador) Associado
             </th>
-            <th>
+            <th class="text-center">
                 Ações
             </th>
         </tr>
     </thead>
-    <tbody class="text-center">
+    <tbody>
         @foreach (var item in Model)
         {
             <tr>
-                <td>
+                <td class="text-center">
                     @Html.DisplayFor(modelItem => item.Nome)
                 </td>
 
-                <td>
+                <td class="text-center">
                     @Html.DisplayFor(modelItem => item.DataHoraRes)
                 </td>
 
-                <td>
+                <td class="text-center">
                     @Html.DisplayFor(modelItem => item.DuracaoReserva)
                 </td>
 
-                <td>
+                <td class="text-center">
                     @Html.DisplayFor(modelItem => item.Status)
                 </td>
 
 
-                <td>
+                <td class="text-center">
                     @{
                         var fullNameMorador = item.Morador.Nome.Split(' ');
                         var firstNameMorador = fullNameMorador[0];
@@ -82,7 +83,7 @@
 
 
 
-                <td>
+                <td class="text-center">
                     <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.ReservasID">Editar</a> |
                     <a class="btn btn-success" asp-action="Details" asp-route-id="@item.ReservasID">Detalhes</a> |
                     <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.ReservasID">Deletar</a>

@@ -6,16 +6,17 @@
 
 
 
-/*let table = new DataTable('#table-veiculos');*/
+/*let table = new DataTable('#table-search');*/
 
 
-$('#table-veiculos').DataTable({
-    "ordering": true,
-    "paging": true,
+$('#table-search').DataTable({
+    "ordering": false,
+    "paging": false,
     "searching": true,
     "oLanguage": {
         "sEmptyTable": "Nenhum registro encontrado na tabela",
-        "sInfo": "Mostrar _START_ até _END_ de _TOTAL_ registros",
+        /*        "sInfo": "Mostrar _START_ até _END_ de _TOTAL_ registros",*/
+        "sInfo": "",
         "sInfoEmpty": "Mostrar 0 até 0 de 0 Registros",
         "sInfoFiltered": "(Filtrar de _MAX_ total registros)",
         "sInfoPostFix": "",

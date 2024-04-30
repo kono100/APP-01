@@ -17,45 +17,46 @@
     <a class="btn btn-primary" asp-action="Create">Criar</a>
 </p>
 
-<table class="table table-hover">
-    <thead class="text-center">
+<table class="table table-hover" id="table-search">
+    <thead>
         <tr>
-            <th>
+            <th class="text-center">
                 @Html.DisplayNameFor(model => model.Nome) do Visitante
             </th>
 
 
-            <th>
+@*             <th class ="text-center">
                 @Html.DisplayNameFor(model => model.CPF)
-            </th>
+            </th> *@
 
-            <th>
+            <th class="text-center">
                 @* @Html.DisplayNameFor(model => model.DataNasc) *@ Data de Nascimento
             </th>
 
 
-            <th>
+            <th class="text-center">
                 @* @Html.DisplayNameFor(model => model.EndDate) *@ Despedida Prevista
             </th>
 
-@*             <th>
+@*             <th class ="text-center">
                 @Html.DisplayNameFor(model => model.Observacao)
             </th> *@
 
-            <th>
+            <th class="text-center">
                 @Html.DisplayNameFor(model => model.Foto)
             </th>
 
 
-            <th>
+            <th class="text-center">
                 @Html.DisplayNameFor(model => model.Morador) Associado
             </th>
-            <th>
+
+            <th class="text-center">
                 Ações
             </th>
         </tr>
     </thead>
-    <tbody class="text-center">
+    <tbody>
         @foreach (var item in Model)
         {
             <tr>
@@ -70,25 +71,25 @@
                 </td>
 
 
-                <td>
+@*                 <td class ="text-center">
                     @Html.DisplayFor(modelItem => item.CPF)
                 </td>
-
-                <td>
+ *@
+                <td class="text-center">
                     @Html.DisplayFor(modelItem => item.DataNasc)
                 </td>
 
-                <td>
+                <td class="text-center">
                     @Html.DisplayFor(modelItem => item.EndDate)
                 </td>
 
-@*                 <td>
+@*                 <td class ="text-center">
                     @Html.DisplayFor(modelItem => item.Observacao)
                 </td> *@
 
 
 
-                <td>
+                <td class="text-center">
                     @{
                         try
                         {
@@ -107,7 +108,7 @@
                 </td>
 
 
-                <td>
+                <td class="text-center">
                     @{
                         var fullNameMorador = item.Morador.Nome.Split(' ');
                         var firstNameMorador = fullNameMorador[0];
@@ -116,7 +117,7 @@
                     <p>@Html.DisplayFor(modelItem => firstNameMorador) @Html.Raw(" ") @Html.DisplayFor(modelItem => lastNameMorador)</p>
                 </td>
 
-                <td>
+                <td class="text-center">
                     <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.VisitanteID">Editar</a> |
                     <a class="btn btn-success" asp-action="Details" asp-route-id="@item.VisitanteID">Detalhes</a> |
                     <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.VisitanteID">Deletar</a>
