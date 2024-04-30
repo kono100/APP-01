@@ -45,6 +45,42 @@
             @Html.DisplayFor(model => model.DataNasc)
         </dd>
 
+        @{
+            DateTime dataNascimento;
+            if (DateTime.TryParse(Model.DataNasc, out dataNascimento))
+            {
+                var idade = DateTime.Today.Year - dataNascimento.Year;
+                if (dataNascimento.Date > DateTime.Today.AddYears(-idade))
+                {
+                    idade--;
+                }
+
+                <dt class="col-sm-2">
+                    <label>Idade</label>
+                </dt>
+                <dd class="col-sm-10">
+                    @if (dataNascimento.Month == DateTime.Today.Month && dataNascimento.Day == DateTime.Today.Day)
+                    {
+                        <strong>Parabéns, hoje você faz @idade anos!</strong>
+                    }
+                    else
+                    {
+                        <strong>@idade</strong>
+                    }
+                </dd>
+            }
+            else
+            {
+                <dt class="col-sm-2">
+                    <label>Idade</label>
+                </dt>
+                <dd class="col-sm-10">
+                    <strong>N/A</strong> <!-- or any indication that the age could not be calculated -->
+                </dd>
+            }
+        }
+
+
         <dt class="col-sm-2">
             @*             @Html.DisplayNameFor(model => model.EndDate) *@ <label>Despedida Prevista</label>
         </dt>
