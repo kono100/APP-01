@@ -25,6 +25,9 @@
 <table class="table table-hover" id="table-search">
     <thead>
         <tr>
+            <th class="text-center">
+                N.º
+            </th>
 
             <th class="text-center">
                 @Html.DisplayNameFor(model => model.Nome) Completo
@@ -38,14 +41,14 @@
                 @*                 @Html.DisplayNameFor(model => model.NumeroAP) *@ Numero AP
             </th>
 
-            <th class="text-center">
-@*                 @Html.DisplayNameFor(model => model.DataNasc) *@ Data de Nascimento
-            </th>
-
 @*             <th class="text-center">
+                Data de Nascimento
+            </th> *@
+
+            <th class="text-center">
                 @Html.DisplayNameFor(model => model.CPF)
             </th>
- *@
+
             <th class="text-center">
                 @Html.DisplayNameFor(model => model.Telefone)
             </th>
@@ -63,9 +66,17 @@
         </tr>
     </thead>
     <tbody>
+
+        @{
+            var contador = 0;
+        }
         @foreach (var item in Model)
         {
             <tr>
+                <td class="text-center">
+                    @(++contador)
+                </td>
+
                 <td class="text-center">
                     @{
                         var fullName = item.Nome.Split(' ');
@@ -83,13 +94,13 @@
                     @Html.DisplayFor(modelItem => item.NumeroAP)
                 </td>
 
-                <td class="text-center">
-                    @Html.DisplayFor(modelItem => item.DataNasc)
-                </td>
-
 @*                 <td class="text-center">
-                    @Html.DisplayFor(modelItem => item.CPF)
+                    @Html.DisplayFor(modelItem => item.DataNasc)
                 </td> *@
+
+                <td class="text-center">
+                    @Html.DisplayFor(modelItem => item.CPF)
+                </td>
 
                 <td class="text-center">
                     @Html.DisplayFor(modelItem => item.Telefone)

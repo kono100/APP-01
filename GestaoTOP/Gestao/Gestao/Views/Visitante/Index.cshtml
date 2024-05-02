@@ -21,18 +21,22 @@
     <thead>
         <tr>
             <th class="text-center">
+                N.º
+            </th>
+
+            <th class="text-center">
                 @Html.DisplayNameFor(model => model.Nome) do Visitante
             </th>
 
 
-@*             <th class ="text-center">
+            <th class ="text-center">
                 @Html.DisplayNameFor(model => model.CPF)
-            </th> *@
-
-            <th class="text-center">
-                @* @Html.DisplayNameFor(model => model.DataNasc) *@ Data de Nascimento
             </th>
-
+@* 
+            <th class="text-center">
+                Data de Nascimento
+            </th>
+ *@
 
             <th class="text-center">
                 @* @Html.DisplayNameFor(model => model.EndDate) *@ Despedida Prevista
@@ -57,9 +61,18 @@
         </tr>
     </thead>
     <tbody>
+
+        @{
+            var contador = 0;
+        }
+
         @foreach (var item in Model)
         {
             <tr>
+
+                <td class="text-center">
+                    @(++contador)
+                </td>
 
                 <td class="text-center">
                     @{
@@ -71,13 +84,13 @@
                 </td>
 
 
-@*                 <td class ="text-center">
+                <td class ="text-center">
                     @Html.DisplayFor(modelItem => item.CPF)
                 </td>
- *@
+@* 
                 <td class="text-center">
                     @Html.DisplayFor(modelItem => item.DataNasc)
-                </td>
+                </td> *@
 
                 <td class="text-center">
                     @Html.DisplayFor(modelItem => item.EndDate)
