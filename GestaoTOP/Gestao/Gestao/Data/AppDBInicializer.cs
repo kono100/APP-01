@@ -320,7 +320,24 @@ namespace Gestao.Data
                         {
                             new IdentityRole()
                             {
-                                Name = "Adm",
+                                Name = "Admin",
+                            },
+
+                            new IdentityRole()
+                            {
+                                Name = "Sindico",
+                            },
+
+
+                            new IdentityRole()
+                            {
+                                Name = "Condominio",
+                            },
+
+
+                            new IdentityRole()
+                            {
+                                Name = "Morador",
                             },
                         });
                         context.SaveChanges();
