@@ -1,4 +1,6 @@
 ﻿using Gestao.Models;
+using Microsoft.AspNetCore.Identity;
+using System.Data;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace Gestao.Data
@@ -311,8 +313,18 @@ namespace Gestao.Data
 
 
 
-
-
+                    // Criar Roles se estiverem vazias
+                    if (!context.Roles.Any())
+                    {
+                        context.Roles.AddRange(new List<IdentityRole>()
+                        {
+                            new IdentityRole()
+                            {
+                                Name = "Adm",
+                            },
+                        });
+                        context.SaveChanges();
+                    }
 
 
 

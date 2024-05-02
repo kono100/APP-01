@@ -4,6 +4,48 @@
     ViewData["Title"] = "Morador MRV ";
 }
 
+
+
+
+
+
+@{
+    if (User.IsInRole("RIta Cassia"))
+    {
+        // Mostrar conteúdo para o administrador
+
+        <h1>Adm  Mostrar conteúdo para o IsInRole </h1>
+
+    }
+    else if (User.IsInRole("Sindico"))
+    {
+        // Mostrar conteúdo para o síndico
+
+        <h1>sindico  Mostrar conteúdo para o IsInRole </h1>
+
+    }
+    else if (User.IsInRole("Condominio"))
+    {
+        // Mostrar conteúdo para o condomínio
+
+        <h1>Condominio  Mostrar conteúdo para o IsInRole </h1>
+
+    }
+    else if (User.IsInRole("Morador"))
+    {
+        // Mostrar conteúdo para o morador
+
+        <h1>Morador  Mostrar conteúdo para o IsInRole morador</h1>
+
+    }
+}
+
+
+
+
+
+
+
 <h1>Morador</h1>
 
 @if (TempData["Message"] != null)
