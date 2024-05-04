@@ -311,44 +311,44 @@ namespace Gestao.Data
                     context.SaveChanges();
 
 
+				}
+
+				// Criar Papéis de Usuário se estiverem vazios
+				if (!context.Roles.Any())
+				{
+					context.Roles.AddRange(new List<IdentityRole>()
+					{
+						new IdentityRole()
+						{
+							Id = "1",
+							Name = "Admin-Master"
+						},
+
+						new IdentityRole()
+						{
+							Id = "2",
+							Name = "Admin"
+						},
+
+						new IdentityRole()
+						{
+							Id = "3",
+							Name = "Sindico"
+						},
+
+						new IdentityRole()
+						{
+							Id = "4",
+							Name = "Morador"
+						}
+					});
+					context.SaveChanges();
+				}
+			}
+		}
 
 
-                    // Criar Roles se estiverem vazias
-                    if (!context.Roles.Any())
-                    {
-                        context.Roles.AddRange(new List<IdentityRole>()
-                        {
-                            new IdentityRole()
-                            {
-                                Name = "Admin",
-                            },
-
-                            new IdentityRole()
-                            {
-                                Name = "Sindico",
-                            },
 
 
-                            new IdentityRole()
-                            {
-                                Name = "Condominio",
-                            },
-
-
-                            new IdentityRole()
-                            {
-                                Name = "Morador",
-                            },
-                        });
-                        context.SaveChanges();
-                    }
-
-
-
-
-
-                }
-            }
-        }
-    }
+	}
 }
