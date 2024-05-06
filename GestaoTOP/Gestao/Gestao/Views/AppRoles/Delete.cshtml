@@ -18,7 +18,7 @@
         </dd>
     </dl>
 
-    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalConfirmationDelete" onclick="setRoleToDelete('@Model.Name')">Delete</button>
+    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalConfirmationDelete" onclick="setRoleToDelete('@Model.Name')">Deletar</button>
 
     <a asp-action="Index" class="btn btn-primary">Voltar a lista</a>
 </div>
@@ -39,8 +39,8 @@
             <div class="modal-footer">
                 <form asp-action="Delete" method="post">
                     <input type="hidden" asp-for="Id" />
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="window.location.href='@Url.Action("Index", "AppRoles")'">Cancel</button>
+                    <button type="submit" class="btn btn-danger">Deletar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="window.location.href='@Url.Action("Index", "AppRoles")'">Cancelar</button>
                 </form>
             </div>
         </div>
