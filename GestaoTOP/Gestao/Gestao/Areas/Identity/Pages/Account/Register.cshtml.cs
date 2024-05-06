@@ -33,28 +33,28 @@ namespace Gestao.Areas.Identity.Pages.Account
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
 
-		//AQUI
-		private readonly RoleManager<IdentityRole> _roleManager;
+        //AQUI
+        private readonly RoleManager<IdentityRole> _roleManager;
 
-		public RegisterModel(
+        public RegisterModel(
             UserManager<IdentityUser> userManager,
             IUserStore<IdentityUser> userStore,
             SignInManager<IdentityUser> signInManager,
             ILogger<RegisterModel> logger,
             IEmailSender emailSender,
-			RoleManager<IdentityRole> roleManager)
+            RoleManager<IdentityRole> roleManager)
 
         {
 
-			_userManager = userManager;
+            _userManager = userManager;
             _userStore = userStore;
             _emailStore = GetEmailStore();
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
-			_roleManager = roleManager;
+            _roleManager = roleManager;
 
-		}
+        }
 
         /// <summary>
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
@@ -91,24 +91,24 @@ namespace Gestao.Areas.Identity.Pages.Account
             public string Email { get; set; }
 
 
-			//Aqui
-			[Required]
-			[Display(Name = "Primeiro Nome")]
-			public string Firstname { get; set; }
+            //Aqui
+            [Required]
+            [Display(Name = "Primeiro Nome")]
+            public string Firstname { get; set; }
 
 
 
-			[Required]
-			[Display(Name = "Sobrenome")]
-			public string Lastname { get; set; }
+            [Required]
+            [Display(Name = "Sobrenome")]
+            public string Lastname { get; set; }
 
 
 
-			/// <summary>
-			///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-			///     directly from your code. This API may change or be removed in future releases.
-			/// </summary>
-			[Required]
+            /// <summary>
+            ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
+            ///     directly from your code. This API may change or be removed in future releases.
+            /// </summary>
+            [Required]
             [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
             [DataType(DataType.Password)]
             [Display(Name = "Password")]
@@ -124,15 +124,15 @@ namespace Gestao.Areas.Identity.Pages.Account
             public string ConfirmPassword { get; set; }
 
 
-			//aqui
-			[Required]
-			public string? Role { get; set; }
+            //aqui
+            [Required]
+            public string? Role { get; set; }
 
-			[ValidateNever]
-			public IEnumerable<SelectListItem> RoleList { get; set; }
+            [ValidateNever]
+            public IEnumerable<SelectListItem> RoleList { get; set; }
 
 
-		}
+        }
 
 
         public async Task OnGetAsync(string returnUrl = null)
@@ -140,16 +140,38 @@ namespace Gestao.Areas.Identity.Pages.Account
             ReturnUrl = returnUrl;
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
 
-			Input = new InputModel()
-			{
-				RoleList = _roleManager.Roles.Select(x => x.Name).Select(i => new SelectListItem
-				{
-					Text = i,
-					Value = i
-				})
-			};
+            Input = new InputModel()
+            {
+                RoleList = _roleManager.Roles.Select(x => x.Name).Select(i => new SelectListItem
+                {
+                    Text = i,
+                    Value = i
+                })
+            };
 
-		}
+            // Verifica se os papéis de usuário estão vazios e cria-os se necessário
+            if (!_roleManager.Roles.Any())
+            {
+                await CreateDefaultRoles();
+            }
+        }
+
+        private async Task CreateDefaultRoles()
+        {
+            // Defina os nomes dos papéis padrão
+            string[] roleNames = { "Admin-Master", "Admin", "Sindico", "Morador" };
+
+            // Para cada nome de papel, verifique se o papel já existe e crie-o se não existir
+            foreach (var roleName in roleNames)
+            {
+                bool roleExists = await _roleManager.RoleExistsAsync(roleName);
+                if (!roleExists)
+                {
+                    await _roleManager.CreateAsync(new IdentityRole(roleName));
+                }
+            }
+        }
+
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
