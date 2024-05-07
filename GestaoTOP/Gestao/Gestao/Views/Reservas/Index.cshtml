@@ -12,32 +12,43 @@
 
 
 @{
-    if (User.IsInRole("Admin"))
+    <br />
+
+    if (User.IsInRole("Admin-Master"))
     {
 
-        <h1> Ola Admin,  Mostrar conteúdo para Admin </h1>
+        <h5> Ola Admin-Master, </h5>
 
     }
+
+    else if (User.IsInRole("Admin"))
+    {
+
+        <h5> Ola Admin, </h5>
+
+    }
+
     else if (User.IsInRole("Sindico"))
     {
 
-        <h1> Ola sindico,  Mostrar conteúdo para sindico </h1>
+        <h5> Ola sindico, </h5>
 
     }
     else if (User.IsInRole("Condominio"))
     {
 
-        <h1> Ola Condominio,  Mostrar conteúdo para Condominio </h1>
+        <h5> Ola Condominio, </h5>
 
     }
     else if (User.IsInRole("Morador"))
 
     {
 
-        <h1> Ola Morador,  Mostrar conteúdo para Morador r</h1>
+        <h5> Ola Morador, </h5>
 
     }
 }
+
 
 
 

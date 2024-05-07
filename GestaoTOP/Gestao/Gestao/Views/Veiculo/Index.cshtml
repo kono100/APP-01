@@ -5,6 +5,48 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
+
+@{
+    <br />
+
+    if (User.IsInRole("Admin-Master"))
+    {
+
+        <h5> Ola Admin-Master, </h5>
+
+    }
+
+    else if (User.IsInRole("Admin"))
+    {
+
+        <h5> Ola Admin, </h5>
+
+    }
+
+    else if (User.IsInRole("Sindico"))
+    {
+
+        <h5> Ola sindico, </h5>
+
+    }
+    else if (User.IsInRole("Condominio"))
+    {
+
+        <h5> Ola Condominio, </h5>
+
+    }
+    else if (User.IsInRole("Morador"))
+
+    {
+
+        <h5> Ola Morador, </h5>
+
+    }
+}
+
+
+
 <h1>Veiculo</h1>
 
 @if (TempData["Message"] != null)
