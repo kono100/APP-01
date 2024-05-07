@@ -282,8 +282,7 @@
               "RelativeToolTip": "Gestao\\Views\\AppRoles\\Delete.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-02T19:06:44.939Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T19:06:44.939Z"
             },
             {
               "$type": "Document",
@@ -293,7 +292,7 @@
               "RelativeDocumentMoniker": "Gestao\\Views\\AppRoles\\Edit.cshtml",
               "ToolTip": "C:\\Users\\User\\Desktop\\APP-01\\GestaoTOP\\Gestao\\Gestao\\Views\\AppRoles\\Edit.cshtml",
               "RelativeToolTip": "Gestao\\Views\\AppRoles\\Edit.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-05-02T14:49:22.891Z",
               "EditorCaption": ""
@@ -308,8 +307,7 @@
               "RelativeToolTip": "Gestao\\Views\\Reservas\\Delete.cshtml",
               "ViewState": "AQIAABIAAAAAAAAAAAAAAFAAAABCAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-20T16:53:44.04Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-20T16:53:44.04Z"
             },
             {
               "$type": "Document",
@@ -321,8 +319,7 @@
               "RelativeToolTip": "Gestao\\Controllers\\AppRolesController.cs",
               "ViewState": "AQIAAFEAAAAAAAAAAAAuwG8AAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-13T14:56:55.578Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-13T14:56:55.578Z"
             },
             {
               "$type": "Document",
@@ -334,8 +331,7 @@
               "RelativeToolTip": "Gestao\\Views\\AppRoles\\Index.cshtml",
               "ViewState": "AQIAAAYAAAAAAAAAAAAQwAwAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-02T14:49:01.351Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T14:49:01.351Z"
             },
             {
               "$type": "Document",
@@ -360,8 +356,7 @@
               "RelativeToolTip": "Gestao\\Views\\Reservas\\Index.cshtml",
               "ViewState": "AQIAAB4AAAAAAAAAAAAAADcAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-20T16:44:52.371Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-20T16:44:52.371Z"
             },
             {
               "$type": "Document",
@@ -373,8 +368,7 @@
               "RelativeToolTip": "Gestao\\Views\\Morador\\Edit.cshtml",
               "ViewState": "AQIAAJAAAAAAAAAAAAAAAKoAAABGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-20T16:15:25.394Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-20T16:15:25.394Z"
             },
             {
               "$type": "Document",
@@ -386,8 +380,7 @@
               "RelativeToolTip": "Gestao\\Views\\Morador\\Delete.cshtml",
               "ViewState": "AQIAAGkAAAAAAAAAAAAAAFkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-20T15:49:16.754Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-20T15:49:16.754Z"
             },
             {
               "$type": "Document",
@@ -399,8 +392,7 @@
               "RelativeToolTip": "Gestao\\Views\\Morador\\Details.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-20T16:12:05.961Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-20T16:12:05.961Z"
             },
             {
               "$type": "Document",
@@ -412,8 +404,7 @@
               "RelativeToolTip": "Gestao\\Views\\AppRoles\\Create.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-06T20:53:27.466Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-06T20:53:27.466Z"
             },
             {
               "$type": "Document",
@@ -425,8 +416,7 @@
               "RelativeToolTip": "Gestao\\Data\\AppDBInicializer.cs",
               "ViewState": "AQIAAD0BAAAAAAAAAADwv1cBAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-13T14:32:11.072Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-13T14:32:11.072Z"
             },
             {
               "$type": "Document",
@@ -462,8 +452,7 @@
               "RelativeToolTip": "Gestao\\Data\\IESContext.cs",
               "ViewState": "AQIAAAEAAAAAAAAAAAAcwCAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-17T02:19:01.772Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-17T02:19:01.772Z"
             },
             {
               "$type": "Document",
@@ -499,7 +488,8 @@
               "RelativeToolTip": "Gestao\\Controllers\\VisitanteController.cs",
               "ViewState": "AQIAADoAAAAAAAAAAAAkwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-02T18:58:26.539Z"
+              "WhenOpened": "2024-05-02T18:58:26.539Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -511,7 +501,8 @@
               "RelativeToolTip": "Gestao\\Controllers\\ReservasController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-02T18:58:24.195Z"
+              "WhenOpened": "2024-05-02T18:58:24.195Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -583,7 +574,8 @@
               "RelativeToolTip": "Gestao\\Controllers\\VeiculoController.cs",
               "ViewState": "AQIAAFIAAAAAAAAAAAAcwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-06T15:54:44.672Z"
+              "WhenOpened": "2024-04-06T15:54:44.672Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -751,7 +743,8 @@
               "RelativeToolTip": "Gestao\\Views\\Veiculo\\Edit.cshtml",
               "ViewState": "AQIAAHgAAAAAAAAAAAAAAJAEAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-20T16:55:59.249Z"
+              "WhenOpened": "2024-04-20T16:55:59.249Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -775,7 +768,8 @@
               "RelativeToolTip": "Gestao\\Views\\Visitante\\Edit.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAALAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-17T03:05:30.079Z"
+              "WhenOpened": "2024-04-17T03:05:30.079Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",

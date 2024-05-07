@@ -35,15 +35,15 @@ namespace Gestao.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            var instituicoes = _context.Morador.OrderBy(i => i.Nome).ToList();
-            instituicoes.Insert(0, new Morador()
+            var moradores1 = _context.Morador.OrderBy(i => i.Nome).ToList();
+            moradores1.Insert(0, new Morador()
             {
                 MoradorID = 0,
                 Nome = "Selecione o Morador"
 
             });
 
-            ViewBag.Morador = instituicoes;
+            ViewBag.Morador = moradores1;
 
             return View();
         }
@@ -97,7 +97,7 @@ namespace Gestao.Controllers
                 return NotFound();
             }
 
-            ViewBag.Instituicoes = new SelectList(_context.Morador.OrderBy(b => b.Nome),
+            ViewBag.moradores1 = new SelectList(_context.Morador.OrderBy(b => b.Nome),
                 "MoradorID", "Nome", Visitante.fk_MoradorID);
 
             return View(Visitante);
@@ -154,7 +154,7 @@ namespace Gestao.Controllers
                     }
                 }
 
-                ViewBag.Instituicoes = new SelectList(_context.Morador.OrderBy(b => b.Nome),
+                ViewBag.moradores1 = new SelectList(_context.Morador.OrderBy(b => b.Nome),
                 "MoradorID", "Nome", Visitante.fk_MoradorID);
 
                 return RedirectToAction(nameof(Index));
