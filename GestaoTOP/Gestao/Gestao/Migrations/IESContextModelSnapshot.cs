@@ -22,6 +22,49 @@ namespace Gestao.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("Gestao.Models.Departamento", b =>
+                {
+                    b.Property<long?>("DepartamentoID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long?>("DepartamentoID"));
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long?>("fk_InstituicaoID")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("DepartamentoID");
+
+                    b.HasIndex("fk_InstituicaoID");
+
+                    b.ToTable("Departamento");
+                });
+
+            modelBuilder.Entity("Gestao.Models.Instituicao", b =>
+                {
+                    b.Property<long?>("InstituicaoID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long?>("InstituicaoID"));
+
+                    b.Property<string>("Endereco")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("InstituicaoID");
+
+                    b.ToTable("Instituicao");
+                });
+
             modelBuilder.Entity("Gestao.Models.Morador", b =>
                 {
                     b.Property<long?>("MoradorID")
@@ -482,6 +525,15 @@ namespace Gestao.Migrations
                     b.HasDiscriminator().HasValue("ApplicationUser");
                 });
 
+            modelBuilder.Entity("Gestao.Models.Departamento", b =>
+                {
+                    b.HasOne("Gestao.Models.Instituicao", "Instituicao")
+                        .WithMany("Departamentos")
+                        .HasForeignKey("fk_InstituicaoID");
+
+                    b.Navigation("Instituicao");
+                });
+
             modelBuilder.Entity("Gestao.Models.Reservas", b =>
                 {
                     b.HasOne("Gestao.Models.Morador", "Morador")
@@ -558,6 +610,11 @@ namespace Gestao.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Gestao.Models.Instituicao", b =>
+                {
+                    b.Navigation("Departamentos");
                 });
 
             modelBuilder.Entity("Gestao.Models.Morador", b =>
