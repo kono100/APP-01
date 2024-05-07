@@ -264,8 +264,8 @@ namespace Gestao.Data
                         new Reservas()
                         {
                             Nome = "Area de Churrasco",
-                            DataHoraRes = new DateTime(2023,10,11),
-                            DuracaoReserva = "5",
+							DataHoraRes = "21/12/2023  22:00",
+							DuracaoReserva = "5",
                             Status = "Desativado",
                             fk_MoradorID = 2
                         },
@@ -273,8 +273,8 @@ namespace Gestao.Data
                         new Reservas()
                         {
                             Nome = "Area de Festa",
-                            DataHoraRes = new DateTime(2024,01,15),
-                            DuracaoReserva = "6",
+							DataHoraRes = "21/12/2023  22:00",
+							DuracaoReserva = "6",
                             Status = "Pendente",
                             fk_MoradorID = 1
                         },
@@ -282,8 +282,8 @@ namespace Gestao.Data
                         new Reservas()
                         {
                             Nome = "Sala de Reunião",
-                            DataHoraRes = new DateTime(2024,02,26),
-                            DuracaoReserva = "2",
+							DataHoraRes = "21/12/2023  22:00",
+							DuracaoReserva = "2",
                             Status = "Ativo",
                             fk_MoradorID = 3
                         },
@@ -292,8 +292,8 @@ namespace Gestao.Data
                         new Reservas()
                         {
                             Nome = "Piscina",
-                            DataHoraRes = new DateTime(2023,12,03),
-                            DuracaoReserva = "4",
+							DataHoraRes = "21/12/2023  22:00",
+							DuracaoReserva = "4",
                             Status = "Pendente",
                             fk_MoradorID = 1
                         },
@@ -301,8 +301,8 @@ namespace Gestao.Data
                         new Reservas()
                         {
                             Nome = "Area de Festa",
-                            DataHoraRes = new DateTime(2023,12,21),
-                            DuracaoReserva = "6",
+							DataHoraRes = "21/12/2023  22:00",
+							DuracaoReserva = "6",
                             Status = "Ativo",
                             fk_MoradorID = 1
                         },

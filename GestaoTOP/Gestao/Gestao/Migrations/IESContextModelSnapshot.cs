@@ -113,8 +113,9 @@ namespace Gestao.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long?>("ReservasID"));
 
-                    b.Property<DateTime>("DataHoraRes")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("DataHoraRes")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("DuracaoReserva")
                         .IsRequired()

@@ -13,7 +13,7 @@ namespace Gestao.Models
 
         public string Nome { get; set; }  //AreaReservada
 
-        public DateTime DataHoraRes { get; set; }
+		public string DataHoraRes { get; set; }
 
         public string DuracaoReserva { get; set; }
         public string Status { get; set; }
