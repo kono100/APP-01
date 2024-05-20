@@ -158,11 +158,37 @@
 
 
             <div class="form-group">
-                <label asp-for="Foto1" class="control-label">Trocar Foto</label>
+                <label asp-for="Foto1" class="control-label">Foto</label>
                 <input type="file" name="Img" id="Img" class="form-control" />
                 <span asp-validation-for="Foto1" class="text-danger"></span>
-
             </div>
+            <br />
+            <p id="photoLabel"></p>
+
+            <script>
+                const Img = document.querySelector('#Img');
+                const photoLabel = document.querySelector('#photoLabel');
+
+                Img.addEventListener('change', event => {
+                    const preview = document.querySelector('#preview_image');
+                    if (preview) {
+                        preview.remove();
+                    }
+
+                    const reader = new FileReader();
+                    reader.onload = function (event) {
+                        const previewImage = document.createElement('img');
+                        previewImage.width = 120;
+                        previewImage.height = 100;
+                        previewImage.id = 'preview_image';
+                        previewImage.src = event.target.result;
+
+                        photoLabel.textContent = "Foto Selecionada";
+                        photoLabel.insertAdjacentElement('afterend', previewImage);
+                    };
+                    reader.readAsDataURL(Img.files[0]);
+                });
+            </script>
 
 
             <br />
