@@ -51,7 +51,7 @@
 <div class="card card-orange-bg">
 
 
-    <h1 class="card-header">Reservas</h1>
+    <h1 class="card-header">Moradores</h1>
 
 @if (TempData["Message"] != null)
 {
@@ -64,9 +64,13 @@
 }
 
 
-<p>
-    <a class="btn btn-primary" asp-action="Create">Criar</a>
-</p>
+
+<br />
+
+    <a class="btn btn-primary" asp-action="Create">
+        Adicionar um Novo Morador <img src="~/Img/Adiconar+.svg" alt="Alternate Text" height="20px" />
+    </a>
+
 
 
 <table class="table table-hover" id="table-search">

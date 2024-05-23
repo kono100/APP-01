@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "liVAIMqw0LvUES+nHiHMswvBoQxP7pQcl33lZPnE60Q=",
+  "Hash": "177DWyA0EjCgATvUGqP4KlIEm5ptH/HKYy20huqtg+0=",
   "Source": "Gestao",
   "BasePath": "_content/Gestao",
   "Mode": "Default",
@@ -1250,6 +1250,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Img\\download.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\User\\Desktop\\APP-01\\GestaoTOP\\Gestao\\Gestao\\wwwroot\\Img\\IconSave.svg",
+      "SourceId": "Gestao",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\APP-01\\GestaoTOP\\Gestao\\Gestao\\wwwroot\\",
+      "BasePath": "_content/Gestao",
+      "RelativePath": "Img/IconSave.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Img\\IconSave.svg"
     },
     {
       "Identity": "C:\\Users\\User\\Desktop\\APP-01\\GestaoTOP\\Gestao\\Gestao\\wwwroot\\Img\\imagem1.png",
