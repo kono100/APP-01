@@ -5,8 +5,20 @@
       "PackagePath": "staticwebassets\\Gestao.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\User\\Desktop\\APP-01\\GestaoTOP\\Gestao\\Gestao\\wwwroot\\Img\\Adiconar+.svg",
+      "PackagePath": "staticwebassets\\Img\\Adiconar+.svg"
+    },
+    {
       "Id": "C:\\Users\\User\\Desktop\\APP-01\\GestaoTOP\\Gestao\\Gestao\\wwwroot\\Img\\IconSave.svg",
       "PackagePath": "staticwebassets\\Img\\IconSave.svg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\APP-01\\GestaoTOP\\Gestao\\Gestao\\wwwroot\\Img\\IconTrash.svg",
+      "PackagePath": "staticwebassets\\Img\\IconTrash.svg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\APP-01\\GestaoTOP\\Gestao\\Gestao\\wwwroot\\Img\\IconVoltar.svg",
+      "PackagePath": "staticwebassets\\Img\\IconVoltar.svg"
     },
     {
       "Id": "C:\\Users\\User\\Desktop\\APP-01\\GestaoTOP\\Gestao\\Gestao\\wwwroot\\Img\\Loading.gif",
