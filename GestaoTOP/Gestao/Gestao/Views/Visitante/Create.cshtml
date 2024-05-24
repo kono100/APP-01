@@ -159,18 +159,21 @@
 
             <br />
 
-            <div class="form-group">
-                <input type="submit" value="Criar" class="btn btn-success" />
+
+            <div>
+                <div style="display: inline;">
+                    <a class="btn btn-primary" asp-action="Index">Voltar a lista <img src="~/Img/IconVoltar.svg" alt="Alternate Text" height="15px" /> </a>
+                </div>
+                |
+                <div style="display: inline;" class="form-group">
+                    <button type="submit" class="btn btn-success">Criar <img src="~/Img/IconSave.svg" alt="Alternate Text" height="15px" /></button>
+                </div>
             </div>
+
         </form>
     </div>
 </div>
 
-<br />
-
-<div>
-    <a class="btn btn-primary" asp-action="Index">Voltar a lista</a>
-</div>
 
 @section Scripts {
     @{

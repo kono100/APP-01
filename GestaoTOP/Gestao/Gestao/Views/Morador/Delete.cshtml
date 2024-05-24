@@ -88,12 +88,12 @@
 
 
     <div>
-        <a class="btn btn-primary" asp-action="Index">Voltar a lista</a>
+        <a class="btn btn-primary" asp-action="Index">Voltar a lista <img src="~/Img/IconVoltar.svg" alt="Alternate Text" height="15px" /> </a> |
 
 
         <button type="button" class="btn btn-danger" data-toggle="modal"
                 data-target="#modalConfirmationDelete">
-            Remover
+            Remover <img src="~/Img/IconTrash.svg" alt="Alternate Text" height="15px" />
         </button>
 
     </div>
@@ -116,8 +116,8 @@
                 <div class="modal-footer">
                     <form asp-action="Delete">
                         <input type="hidden" asp-for="MoradorID" />
-                        <input type="submit" value="Remover" class="btn btn-warning" />
-                        <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                        <button type="submit" value="Remover" class="btn btn-danger" /> Remover <img src="~/Img/IconTrash.svg" alt="Alternate Text" height="15px" /></button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar <img src="~/Img/IconCancelar.svg" alt="Alternate Text" height="15px" /></button>
                     </form>
                 </div>
             </div>

@@ -9,6 +9,22 @@
       "PackagePath": "staticwebassets\\Img\\Adiconar+.svg"
     },
     {
+      "Id": "C:\\Users\\User\\Desktop\\APP-01\\GestaoTOP\\Gestao\\Gestao\\wwwroot\\Img\\Chat.svg",
+      "PackagePath": "staticwebassets\\Img\\Chat.svg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\APP-01\\GestaoTOP\\Gestao\\Gestao\\wwwroot\\Img\\IconCancelar.svg",
+      "PackagePath": "staticwebassets\\Img\\IconCancelar.svg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\APP-01\\GestaoTOP\\Gestao\\Gestao\\wwwroot\\Img\\IconEditar.svg",
+      "PackagePath": "staticwebassets\\Img\\IconEditar.svg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\APP-01\\GestaoTOP\\Gestao\\Gestao\\wwwroot\\Img\\IconInformacao.svg",
+      "PackagePath": "staticwebassets\\Img\\IconInformacao.svg"
+    },
+    {
       "Id": "C:\\Users\\User\\Desktop\\APP-01\\GestaoTOP\\Gestao\\Gestao\\wwwroot\\Img\\IconSave.svg",
       "PackagePath": "staticwebassets\\Img\\IconSave.svg"
     },
