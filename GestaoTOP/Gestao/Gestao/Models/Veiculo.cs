@@ -21,6 +21,7 @@ namespace Gestao.Models
 
         public string Tag { get; set; }
 
+        public string? ID_Tag { get; set; }
 
 
         public bool Segunda { get; set; }

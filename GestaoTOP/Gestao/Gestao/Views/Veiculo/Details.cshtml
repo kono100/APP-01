@@ -53,6 +53,31 @@
 
 
 
+
+        @{
+
+            if (User.IsInRole("Admin"))
+            {
+
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.ID_Tag)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.ID_Tag)
+                </dd>
+
+
+            }
+            else if (User.IsInRole("Morador"))
+
+            {
+
+
+            }
+        }
+
+
+
         <!-- Segunda -->
         @if (Model.Segunda && Model.HrEntSeg != null && Model.HrSaiSeg != null)
         {

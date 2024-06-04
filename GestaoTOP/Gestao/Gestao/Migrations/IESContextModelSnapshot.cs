@@ -196,6 +196,9 @@ namespace Gestao.Migrations
                     b.Property<string>("HrSaiTer")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ID_Tag")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Marca")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");

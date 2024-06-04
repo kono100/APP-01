@@ -56,16 +56,56 @@
 
 
 
-            <div class="form-group">
-                <label asp-for="Tag" class="control-label">Possui Tag?</label>
-                <select asp-for="Tag" class="form-control">
-                    <option value="SIM">SIM</option>
-                    <option value="NÃO">NÃO</option>
 
-                </select>
-                <span asp-validation-for="Tag" class="text-danger"></span>
-            </div>
 
+@*             <div class="form-group">
+                <label asp-for="ID_Tag" class="control-label">ID_Tag</label>
+                <input asp-for="ID_Tag" class="form-control" />
+                <span asp-validation-for="ID_Tag" class="text-danger"></span>
+            </div> *@
+
+
+
+            @{
+
+                if (User.IsInRole("Admin"))
+                {
+
+
+                    <div class="form-group">
+                        <label asp-for="Tag" class="control-label">Possui Tag?</label>
+                        <select asp-for="Tag" class="form-control">
+                            <option value="NÃO">NÃO</option>
+                            <option value="SIM">SIM</option>
+
+                        </select>
+                        <span asp-validation-for="Tag" class="text-danger"></span>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label asp-for="ID_Tag" class="control-label">ID_Tag</label>
+                        <input asp-for="ID_Tag" class="form-control" />
+                        <span asp-validation-for="ID_Tag" class="text-danger"></span>
+                    </div>
+
+
+                }
+                else if (User.IsInRole("Morador"))
+
+                {
+                    <div class="form-group">
+                        <label asp-for="Tag" class="control-label">Possui Tag?</label>
+                        <select asp-for="Tag" class="form-control">
+                            <option value="NÃO">NÃO</option>
+                            <option value="SIM">SIM</option>
+
+                        </select>
+                        <span asp-validation-for="Tag" class="text-danger"></span>
+                    </div>
+
+                }
+            }
 
 
             <br />
